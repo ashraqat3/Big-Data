@@ -1,0 +1,32 @@
+[2026-04-16T12:56:41.558+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-16T12:56:41.571+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: titanic_dag.test manual__2026-04-16T12:56:32.419778+00:00 [queued]>
+[2026-04-16T12:56:41.577+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: titanic_dag.test manual__2026-04-16T12:56:32.419778+00:00 [queued]>
+[2026-04-16T12:56:41.580+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2026-04-16T12:56:41.591+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): test> on 2026-04-16 12:56:32.419778+00:00
+[2026-04-16T12:56:41.596+0000] {standard_task_runner.py:72} INFO - Started process 585 to run task
+[2026-04-16T12:56:41.598+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'titanic_dag', 'test', 'manual__2026-04-16T12:56:32.419778+00:00', '--job-id', '74', '--raw', '--subdir', 'DAGS_FOLDER/titanic_dag.py', '--cfg-path', '/tmp/tmpt8j36xtk']
+[2026-04-16T12:56:41.600+0000] {standard_task_runner.py:105} INFO - Job 74: Subtask test
+[2026-04-16T12:56:41.649+0000] {task_command.py:467} INFO - Running <TaskInstance: titanic_dag.test manual__2026-04-16T12:56:32.419778+00:00 [running]> on host 9fbda7c5f6bc
+[2026-04-16T12:56:41.721+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='titanic_dag' AIRFLOW_CTX_TASK_ID='test' AIRFLOW_CTX_EXECUTION_DATE='2026-04-16T12:56:32.419778+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-16T12:56:32.419778+00:00'
+[2026-04-16T12:56:41.722+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-16T12:56:41.736+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-04-16T12:56:41.737+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'docker ps']
+[2026-04-16T12:56:41.747+0000] {subprocess.py:99} INFO - Output:
+[2026-04-16T12:56:41.809+0000] {subprocess.py:106} INFO - CONTAINER ID   IMAGE                                                    COMMAND                  CREATED         STATUS                   PORTS                                                                                    NAMES
+[2026-04-16T12:56:41.809+0000] {subprocess.py:106} INFO - f5f5938cc846   big_data-***-webserver                               "/usr/bin/dumb-init …"   3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:18080->8080/tcp, [::]:18080->8080/tcp                                            ***-webserver
+[2026-04-16T12:56:41.810+0000] {subprocess.py:106} INFO - 9fbda7c5f6bc   big_data-***-scheduler                               "/usr/bin/dumb-init …"   3 minutes ago   Up 3 minutes (healthy)   8080/tcp                                                                                 ***-scheduler
+[2026-04-16T12:56:41.810+0000] {subprocess.py:106} INFO - 8666b478ca78   big_data-***-triggerer                               "/usr/bin/dumb-init …"   3 minutes ago   Up 3 minutes             8080/tcp                                                                                 ***-triggerer
+[2026-04-16T12:56:41.810+0000] {subprocess.py:106} INFO - 1175ad6b07ce   bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       "/entrypoint.sh /run…"   3 minutes ago   Up 3 minutes (healthy)   8042/tcp                                                                                 hadoop-nodemanager
+[2026-04-16T12:56:41.811+0000] {subprocess.py:106} INFO - 5b0353f352af   bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       "/entrypoint.sh /run…"   3 minutes ago   Up 3 minutes (healthy)   8042/tcp                                                                                 hadoop-nodemanager2
+[2026-04-16T12:56:41.811+0000] {subprocess.py:106} INFO - 53d5d8c01034   bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:9864->9864/tcp, :::9864->9864/tcp                                                hadoop-datanode1
+[2026-04-16T12:56:41.811+0000] {subprocess.py:106} INFO - a74558f63d83   bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8   "/entrypoint.sh /run…"   3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:8088->8088/tcp, :::8088->8088/tcp                                                resourcemanager
+[2026-04-16T12:56:41.812+0000] {subprocess.py:106} INFO - 872fb6894025   bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:9865->9864/tcp, [::]:9865->9864/tcp                                              hadoop-datanode2
+[2026-04-16T12:56:41.812+0000] {subprocess.py:106} INFO - ac8b40f01931   jupyter/pyspark-notebook:latest                          "tini -g -- start-no…"   3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:4040->4040/tcp, :::4040->4040/tcp, 0.0.0.0:8899->8888/tcp, [::]:8899->8888/tcp   spark-jupyter
+[2026-04-16T12:56:41.812+0000] {subprocess.py:106} INFO - c328716e8353   postgres:13                                              "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes (healthy)   5432/tcp                                                                                 postgres_***
+[2026-04-16T12:56:41.813+0000] {subprocess.py:106} INFO - 11f11da594ff   bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp, 0.0.0.0:9870->9870/tcp, :::9870->9870/tcp     hadoop-namenode
+[2026-04-16T12:56:41.813+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-04-16T12:56:41.841+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-04-16T12:56:41.842+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=titanic_dag, task_id=test, run_id=manual__2026-04-16T12:56:32.419778+00:00, execution_date=20260416T125632, start_date=20260416T125641, end_date=20260416T125641
+[2026-04-16T12:56:41.892+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-04-16T12:56:41.909+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-16T12:56:41.912+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

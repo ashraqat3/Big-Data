@@ -1,0 +1,689 @@
+[2026-04-29T11:55:04.253+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-29T11:55:04.285+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: titanic_dag.extraction manual__2026-04-29T11:54:55.696794+00:00 [queued]>
+[2026-04-29T11:55:04.302+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: titanic_dag.extraction manual__2026-04-29T11:54:55.696794+00:00 [queued]>
+[2026-04-29T11:55:04.304+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2026-04-29T11:55:04.332+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): extraction> on 2026-04-29 11:54:55.696794+00:00
+[2026-04-29T11:55:04.345+0000] {standard_task_runner.py:72} INFO - Started process 815 to run task
+[2026-04-29T11:55:04.352+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'titanic_dag', 'extraction', 'manual__2026-04-29T11:54:55.696794+00:00', '--job-id', '115', '--raw', '--subdir', 'DAGS_FOLDER/titanic_dag.py', '--cfg-path', '/tmp/tmpgwyhu4r8']
+[2026-04-29T11:55:04.357+0000] {standard_task_runner.py:105} INFO - Job 115: Subtask extraction
+[2026-04-29T11:55:04.490+0000] {task_command.py:467} INFO - Running <TaskInstance: titanic_dag.extraction manual__2026-04-29T11:54:55.696794+00:00 [running]> on host 9fbda7c5f6bc
+[2026-04-29T11:55:04.678+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='titanic_dag' AIRFLOW_CTX_TASK_ID='extraction' AIRFLOW_CTX_EXECUTION_DATE='2026-04-29T11:54:55.696794+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-29T11:54:55.696794+00:00'
+[2026-04-29T11:55:04.680+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-29T11:55:04.733+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-04-29T11:55:04.736+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        docker exec spark-jupyter spark-submit /home/jovyan/work/Scripts/extraction.py\n        ']
+[2026-04-29T11:55:04.759+0000] {subprocess.py:99} INFO - Output:
+[2026-04-29T11:55:10.916+0000] {subprocess.py:106} INFO - 26/04/29 11:55:10 INFO SparkContext: Running Spark version 3.5.0
+[2026-04-29T11:55:10.922+0000] {subprocess.py:106} INFO - 26/04/29 11:55:10 INFO SparkContext: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+[2026-04-29T11:55:10.923+0000] {subprocess.py:106} INFO - 26/04/29 11:55:10 INFO SparkContext: Java version 17.0.8.1
+[2026-04-29T11:55:11.105+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-04-29T11:55:11.338+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO ResourceUtils: ==============================================================
+[2026-04-29T11:55:11.340+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2026-04-29T11:55:11.341+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO ResourceUtils: ==============================================================
+[2026-04-29T11:55:11.342+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO SparkContext: Submitted application: BronzeLayerIngestion
+[2026-04-29T11:55:11.399+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2026-04-29T11:55:11.417+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2026-04-29T11:55:11.422+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2026-04-29T11:55:11.567+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO SecurityManager: Changing view acls to: root
+[2026-04-29T11:55:11.571+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO SecurityManager: Changing modify acls to: root
+[2026-04-29T11:55:11.572+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO SecurityManager: Changing view acls groups to:
+[2026-04-29T11:55:11.573+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO SecurityManager: Changing modify acls groups to:
+[2026-04-29T11:55:11.574+0000] {subprocess.py:106} INFO - 26/04/29 11:55:11 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+[2026-04-29T11:55:12.393+0000] {subprocess.py:106} INFO - 26/04/29 11:55:12 INFO Utils: Successfully started service 'sparkDriver' on port 39813.
+[2026-04-29T11:55:12.520+0000] {subprocess.py:106} INFO - 26/04/29 11:55:12 INFO SparkEnv: Registering MapOutputTracker
+[2026-04-29T11:55:12.651+0000] {subprocess.py:106} INFO - 26/04/29 11:55:12 INFO SparkEnv: Registering BlockManagerMaster
+[2026-04-29T11:55:12.713+0000] {subprocess.py:106} INFO - 26/04/29 11:55:12 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2026-04-29T11:55:12.714+0000] {subprocess.py:106} INFO - 26/04/29 11:55:12 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2026-04-29T11:55:12.826+0000] {subprocess.py:106} INFO - 26/04/29 11:55:12 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2026-04-29T11:55:12.884+0000] {subprocess.py:106} INFO - 26/04/29 11:55:12 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-70f1f302-878b-4d1b-aed5-a03395e691c1
+[2026-04-29T11:55:12.914+0000] {subprocess.py:106} INFO - 26/04/29 11:55:12 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2026-04-29T11:55:13.012+0000] {subprocess.py:106} INFO - 26/04/29 11:55:13 INFO SparkEnv: Registering OutputCommitCoordinator
+[2026-04-29T11:55:13.380+0000] {subprocess.py:106} INFO - 26/04/29 11:55:13 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2026-04-29T11:55:13.569+0000] {subprocess.py:106} INFO - 26/04/29 11:55:13 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2026-04-29T11:55:14.072+0000] {subprocess.py:106} INFO - 26/04/29 11:55:14 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at resourcemanager/172.30.1.24:8032
+[2026-04-29T11:55:15.879+0000] {subprocess.py:106} INFO - 26/04/29 11:55:15 INFO Configuration: resource-types.xml not found
+[2026-04-29T11:55:15.881+0000] {subprocess.py:106} INFO - 26/04/29 11:55:15 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+[2026-04-29T11:55:15.905+0000] {subprocess.py:106} INFO - 26/04/29 11:55:15 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+[2026-04-29T11:55:15.906+0000] {subprocess.py:106} INFO - 26/04/29 11:55:15 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+[2026-04-29T11:55:15.907+0000] {subprocess.py:106} INFO - 26/04/29 11:55:15 INFO Client: Setting up container launch context for our AM
+[2026-04-29T11:55:15.908+0000] {subprocess.py:106} INFO - 26/04/29 11:55:15 INFO Client: Setting up the launch environment for our AM container
+[2026-04-29T11:55:15.921+0000] {subprocess.py:106} INFO - 26/04/29 11:55:15 INFO Client: Preparing resources for our AM container
+[2026-04-29T11:55:16.177+0000] {subprocess.py:106} INFO - 26/04/29 11:55:16 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+[2026-04-29T11:55:26.841+0000] {subprocess.py:106} INFO - 26/04/29 11:55:26 INFO Client: Uploading resource file:/tmp/spark-465386c7-f9de-40d9-8bf1-2b62014cbab7/__spark_libs__15368395802297928316.zip -> hdfs://hadoop-namenode:9000/user/root/.sparkStaging/application_1777462464957_0001/__spark_libs__15368395802297928316.zip
+[2026-04-29T11:55:36.654+0000] {subprocess.py:106} INFO - 26/04/29 11:55:36 INFO Client: Uploading resource file:/tmp/spark-465386c7-f9de-40d9-8bf1-2b62014cbab7/__spark_conf__9462343666685806530.zip -> hdfs://hadoop-namenode:9000/user/root/.sparkStaging/application_1777462464957_0001/__spark_conf__.zip
+[2026-04-29T11:55:36.749+0000] {subprocess.py:106} INFO - 26/04/29 11:55:36 INFO SecurityManager: Changing view acls to: root
+[2026-04-29T11:55:36.751+0000] {subprocess.py:106} INFO - 26/04/29 11:55:36 INFO SecurityManager: Changing modify acls to: root
+[2026-04-29T11:55:36.752+0000] {subprocess.py:106} INFO - 26/04/29 11:55:36 INFO SecurityManager: Changing view acls groups to:
+[2026-04-29T11:55:36.753+0000] {subprocess.py:106} INFO - 26/04/29 11:55:36 INFO SecurityManager: Changing modify acls groups to:
+[2026-04-29T11:55:36.755+0000] {subprocess.py:106} INFO - 26/04/29 11:55:36 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+[2026-04-29T11:55:36.782+0000] {subprocess.py:106} INFO - 26/04/29 11:55:36 INFO Client: Submitting application application_1777462464957_0001 to ResourceManager
+[2026-04-29T11:55:37.762+0000] {subprocess.py:106} INFO - 26/04/29 11:55:37 INFO YarnClientImpl: Submitted application application_1777462464957_0001
+[2026-04-29T11:55:38.794+0000] {subprocess.py:106} INFO - 26/04/29 11:55:38 INFO Client: Application report for application_1777462464957_0001 (state: ACCEPTED)
+[2026-04-29T11:55:38.811+0000] {subprocess.py:106} INFO - 26/04/29 11:55:38 INFO Client:
+[2026-04-29T11:55:38.817+0000] {subprocess.py:106} INFO - 	 client token: N/A
+[2026-04-29T11:55:38.818+0000] {subprocess.py:106} INFO - 	 diagnostics: [Wed Apr 29 11:55:38 +0000 2026] Scheduler has assigned a container for AM, waiting for AM container to be launched
+[2026-04-29T11:55:38.819+0000] {subprocess.py:106} INFO - 	 ApplicationMaster host: N/A
+[2026-04-29T11:55:38.820+0000] {subprocess.py:106} INFO - 	 ApplicationMaster RPC port: -1
+[2026-04-29T11:55:38.822+0000] {subprocess.py:106} INFO - 	 queue: default
+[2026-04-29T11:55:38.823+0000] {subprocess.py:106} INFO - 	 start time: 1777463737335
+[2026-04-29T11:55:38.824+0000] {subprocess.py:106} INFO - 	 final status: UNDEFINED
+[2026-04-29T11:55:38.828+0000] {subprocess.py:106} INFO - 	 tracking URL: http://resourcemanager:8088/proxy/application_1777462464957_0001/
+[2026-04-29T11:55:38.829+0000] {subprocess.py:106} INFO - 	 user: root
+[2026-04-29T11:56:08.758+0000] {subprocess.py:106} INFO - 26/04/29 11:56:08 INFO Client: Application report for application_1777462464957_0001 (state: ACCEPTED)
+[2026-04-29T11:56:23.891+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO Client: Application report for application_1777462464957_0001 (state: RUNNING)
+[2026-04-29T11:56:23.895+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO Client:
+[2026-04-29T11:56:23.899+0000] {subprocess.py:106} INFO - 	 client token: N/A
+[2026-04-29T11:56:23.900+0000] {subprocess.py:106} INFO - 	 diagnostics: N/A
+[2026-04-29T11:56:23.902+0000] {subprocess.py:106} INFO - 	 ApplicationMaster host: 172.30.1.26
+[2026-04-29T11:56:23.903+0000] {subprocess.py:106} INFO - 	 ApplicationMaster RPC port: -1
+[2026-04-29T11:56:23.904+0000] {subprocess.py:106} INFO - 	 queue: default
+[2026-04-29T11:56:23.905+0000] {subprocess.py:106} INFO - 	 start time: 1777463737335
+[2026-04-29T11:56:23.906+0000] {subprocess.py:106} INFO - 	 final status: UNDEFINED
+[2026-04-29T11:56:23.908+0000] {subprocess.py:106} INFO - 	 tracking URL: http://resourcemanager:8088/proxy/application_1777462464957_0001/
+[2026-04-29T11:56:23.908+0000] {subprocess.py:106} INFO - 	 user: root
+[2026-04-29T11:56:23.909+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO YarnClientSchedulerBackend: Application application_1777462464957_0001 has started running.
+[2026-04-29T11:56:23.935+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38135.
+[2026-04-29T11:56:23.936+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO NettyBlockTransferService: Server created on 172.30.1.13 0.0.0.0:38135
+[2026-04-29T11:56:23.940+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2026-04-29T11:56:23.963+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 172.30.1.13, 38135, None)
+[2026-04-29T11:56:23.978+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO BlockManagerMasterEndpoint: Registering block manager 172.30.1.13:38135 with 434.4 MiB RAM, BlockManagerId(driver, 172.30.1.13, 38135, None)
+[2026-04-29T11:56:23.987+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 172.30.1.13, 38135, None)
+[2026-04-29T11:56:23.988+0000] {subprocess.py:106} INFO - 26/04/29 11:56:23 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 172.30.1.13, 38135, None)
+[2026-04-29T11:56:24.112+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> resourcemanager, PROXY_URI_BASES -> http://resourcemanager:8088/proxy/application_1777462464957_0001), /proxy/application_1777462464957_0001
+[2026-04-29T11:56:24.539+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /jobs: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.555+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /jobs/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.558+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /jobs/job: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.565+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /jobs/job/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.573+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /stages: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.574+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /stages/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.576+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /stages/stage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.581+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /stages/stage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.591+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /stages/pool: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.594+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /stages/pool/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.596+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /storage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.599+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /storage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.603+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /storage/rdd: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.606+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /storage/rdd/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.610+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /environment: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.615+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /environment/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.621+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /executors: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.623+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /executors/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.631+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /executors/threadDump: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.633+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /executors/threadDump/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.636+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /executors/heapHistogram: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.640+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /executors/heapHistogram/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.646+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /static: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.683+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.685+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /api: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.693+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /jobs/job/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.694+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /stages/stage/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.707+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO ServerInfo: Adding filter to /metrics/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:24.713+0000] {subprocess.py:106} INFO - 26/04/29 11:56:24 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after waiting maxRegisteredResourcesWaitingTime: 30000000000(ns)
+[2026-04-29T11:56:25.247+0000] {subprocess.py:106} INFO - 26/04/29 11:56:25 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+[2026-04-29T11:56:25.502+0000] {subprocess.py:106} INFO - Spark Connected
+[2026-04-29T11:56:25.717+0000] {subprocess.py:106} INFO - 26/04/29 11:56:25 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2026-04-29T11:56:25.719+0000] {subprocess.py:106} INFO - 26/04/29 11:56:25 INFO SharedState: Warehouse path is 'file:/home/jovyan/spark-warehouse'.
+[2026-04-29T11:56:25.762+0000] {subprocess.py:106} INFO - 26/04/29 11:56:25 INFO ServerInfo: Adding filter to /SQL: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:25.772+0000] {subprocess.py:106} INFO - 26/04/29 11:56:25 INFO ServerInfo: Adding filter to /SQL/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:25.776+0000] {subprocess.py:106} INFO - 26/04/29 11:56:25 INFO ServerInfo: Adding filter to /SQL/execution: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:25.794+0000] {subprocess.py:106} INFO - 26/04/29 11:56:25 INFO ServerInfo: Adding filter to /SQL/execution/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:25.796+0000] {subprocess.py:106} INFO - 26/04/29 11:56:25 INFO ServerInfo: Adding filter to /static/sql: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T11:56:29.331+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO InMemoryFileIndex: It took 1373 ms to list leaf files for 1 paths.
+[2026-04-29T11:56:29.594+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO HadoopFSUtils: Listing leaf files and directories in parallel under 90 paths. The first several paths are: file:/home/jovyan/work/data/raw_events/event_20260428_223151_213561.json, file:/home/jovyan/work/data/raw_events/event_20260428_223154_236371.json, file:/home/jovyan/work/data/raw_events/event_20260428_223157_254374.json, file:/home/jovyan/work/data/raw_events/event_20260428_223200_270923.json, file:/home/jovyan/work/data/raw_events/event_20260428_223200_982218.json, file:/home/jovyan/work/data/raw_events/event_20260428_223204_000493.json, file:/home/jovyan/work/data/raw_events/event_20260428_223207_020858.json, file:/home/jovyan/work/data/raw_events/event_20260428_223210_039646.json, file:/home/jovyan/work/data/raw_events/event_20260428_223213_055249.json, file:/home/jovyan/work/data/raw_events/event_20260428_223216_074974.json.
+[2026-04-29T11:56:29.610+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO SparkContext: Starting job: json at NativeMethodAccessorImpl.java:0
+[2026-04-29T11:56:29.652+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO DAGScheduler: Got job 0 (json at NativeMethodAccessorImpl.java:0) with 90 output partitions
+[2026-04-29T11:56:29.654+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO DAGScheduler: Final stage: ResultStage 0 (json at NativeMethodAccessorImpl.java:0)
+[2026-04-29T11:56:29.655+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T11:56:29.662+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T11:56:29.667+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2026-04-29T11:56:29.889+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 103.6 KiB, free 434.3 MiB)
+[2026-04-29T11:56:29.992+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 37.4 KiB, free 434.3 MiB)
+[2026-04-29T11:56:30.001+0000] {subprocess.py:106} INFO - 26/04/29 11:56:29 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.30.1.13:38135 (size: 37.4 KiB, free: 434.4 MiB)
+[2026-04-29T11:56:30.011+0000] {subprocess.py:106} INFO - 26/04/29 11:56:30 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T11:56:30.062+0000] {subprocess.py:106} INFO - 26/04/29 11:56:30 INFO DAGScheduler: Submitting 90 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+[2026-04-29T11:56:30.065+0000] {subprocess.py:106} INFO - 26/04/29 11:56:30 INFO YarnScheduler: Adding task set 0.0 with 90 tasks resource profile 0
+[2026-04-29T11:56:35.715+0000] {subprocess.py:106} INFO - 26/04/29 11:56:35 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.30.1.26:49118) with ID 1,  ResourceProfileId 0
+[2026-04-29T11:56:35.959+0000] {subprocess.py:106} INFO - 26/04/29 11:56:35 INFO BlockManagerMasterEndpoint: Registering block manager 5b0353f352af:33345 with 366.3 MiB RAM, BlockManagerId(1, 5b0353f352af, 33345, None)
+[2026-04-29T11:56:36.198+0000] {subprocess.py:106} INFO - 26/04/29 11:56:36 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (5b0353f352af, executor 1, partition 0, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:37.022+0000] {subprocess.py:106} INFO - 26/04/29 11:56:37 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 5b0353f352af:33345 (size: 37.4 KiB, free: 366.3 MiB)
+[2026-04-29T11:56:39.145+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (5b0353f352af, executor 1, partition 1, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.172+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 3029 ms on 5b0353f352af (executor 1) (1/90)
+[2026-04-29T11:56:39.327+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (5b0353f352af, executor 1, partition 2, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.331+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 186 ms on 5b0353f352af (executor 1) (2/90)
+[2026-04-29T11:56:39.447+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (5b0353f352af, executor 1, partition 3, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.449+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 83 ms on 5b0353f352af (executor 1) (3/90)
+[2026-04-29T11:56:39.523+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (5b0353f352af, executor 1, partition 4, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.526+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 119 ms on 5b0353f352af (executor 1) (4/90)
+[2026-04-29T11:56:39.606+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (5b0353f352af, executor 1, partition 5, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.616+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 95 ms on 5b0353f352af (executor 1) (5/90)
+[2026-04-29T11:56:39.684+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (5b0353f352af, executor 1, partition 6, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.685+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 80 ms on 5b0353f352af (executor 1) (6/90)
+[2026-04-29T11:56:39.759+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (5b0353f352af, executor 1, partition 7, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.774+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 88 ms on 5b0353f352af (executor 1) (7/90)
+[2026-04-29T11:56:39.846+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (5b0353f352af, executor 1, partition 8, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.848+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 91 ms on 5b0353f352af (executor 1) (8/90)
+[2026-04-29T11:56:39.915+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (5b0353f352af, executor 1, partition 9, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.920+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 70 ms on 5b0353f352af (executor 1) (9/90)
+[2026-04-29T11:56:39.974+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10) (5b0353f352af, executor 1, partition 10, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:39.977+0000] {subprocess.py:106} INFO - 26/04/29 11:56:39 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 65 ms on 5b0353f352af (executor 1) (10/90)
+[2026-04-29T11:56:40.041+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11) (5b0353f352af, executor 1, partition 11, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.046+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 71 ms on 5b0353f352af (executor 1) (11/90)
+[2026-04-29T11:56:40.111+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12) (5b0353f352af, executor 1, partition 12, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.113+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 74 ms on 5b0353f352af (executor 1) (12/90)
+[2026-04-29T11:56:40.168+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13) (5b0353f352af, executor 1, partition 13, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.171+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 61 ms on 5b0353f352af (executor 1) (13/90)
+[2026-04-29T11:56:40.223+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14) (5b0353f352af, executor 1, partition 14, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.226+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 58 ms on 5b0353f352af (executor 1) (14/90)
+[2026-04-29T11:56:40.279+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15) (5b0353f352af, executor 1, partition 15, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.281+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 55 ms on 5b0353f352af (executor 1) (15/90)
+[2026-04-29T11:56:40.337+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 16.0 in stage 0.0 (TID 16) (5b0353f352af, executor 1, partition 16, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.339+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 15.0 in stage 0.0 (TID 15) in 63 ms on 5b0353f352af (executor 1) (16/90)
+[2026-04-29T11:56:40.394+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 17.0 in stage 0.0 (TID 17) (5b0353f352af, executor 1, partition 17, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.398+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 16.0 in stage 0.0 (TID 16) in 64 ms on 5b0353f352af (executor 1) (17/90)
+[2026-04-29T11:56:40.444+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 18.0 in stage 0.0 (TID 18) (5b0353f352af, executor 1, partition 18, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.446+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 17.0 in stage 0.0 (TID 17) in 53 ms on 5b0353f352af (executor 1) (18/90)
+[2026-04-29T11:56:40.495+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 19.0 in stage 0.0 (TID 19) (5b0353f352af, executor 1, partition 19, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.498+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 18.0 in stage 0.0 (TID 18) in 53 ms on 5b0353f352af (executor 1) (19/90)
+[2026-04-29T11:56:40.545+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 20.0 in stage 0.0 (TID 20) (5b0353f352af, executor 1, partition 20, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.547+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 19.0 in stage 0.0 (TID 19) in 53 ms on 5b0353f352af (executor 1) (20/90)
+[2026-04-29T11:56:40.609+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 21.0 in stage 0.0 (TID 21) (5b0353f352af, executor 1, partition 21, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.635+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 20.0 in stage 0.0 (TID 20) in 91 ms on 5b0353f352af (executor 1) (21/90)
+[2026-04-29T11:56:40.690+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 22.0 in stage 0.0 (TID 22) (5b0353f352af, executor 1, partition 22, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.692+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 21.0 in stage 0.0 (TID 21) in 83 ms on 5b0353f352af (executor 1) (22/90)
+[2026-04-29T11:56:40.742+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 23.0 in stage 0.0 (TID 23) (5b0353f352af, executor 1, partition 23, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.744+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 22.0 in stage 0.0 (TID 22) in 54 ms on 5b0353f352af (executor 1) (23/90)
+[2026-04-29T11:56:40.793+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 24.0 in stage 0.0 (TID 24) (5b0353f352af, executor 1, partition 24, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.794+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 23.0 in stage 0.0 (TID 23) in 52 ms on 5b0353f352af (executor 1) (24/90)
+[2026-04-29T11:56:40.844+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 25.0 in stage 0.0 (TID 25) (5b0353f352af, executor 1, partition 25, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.845+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 24.0 in stage 0.0 (TID 24) in 54 ms on 5b0353f352af (executor 1) (25/90)
+[2026-04-29T11:56:40.892+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 26.0 in stage 0.0 (TID 26) (5b0353f352af, executor 1, partition 26, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.894+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 25.0 in stage 0.0 (TID 25) in 50 ms on 5b0353f352af (executor 1) (26/90)
+[2026-04-29T11:56:40.952+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Starting task 27.0 in stage 0.0 (TID 27) (5b0353f352af, executor 1, partition 27, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:40.953+0000] {subprocess.py:106} INFO - 26/04/29 11:56:40 INFO TaskSetManager: Finished task 26.0 in stage 0.0 (TID 26) in 63 ms on 5b0353f352af (executor 1) (27/90)
+[2026-04-29T11:56:41.011+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 28.0 in stage 0.0 (TID 28) (5b0353f352af, executor 1, partition 28, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.024+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 27.0 in stage 0.0 (TID 27) in 63 ms on 5b0353f352af (executor 1) (28/90)
+[2026-04-29T11:56:41.070+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 29.0 in stage 0.0 (TID 29) (5b0353f352af, executor 1, partition 29, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.072+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 28.0 in stage 0.0 (TID 28) in 52 ms on 5b0353f352af (executor 1) (29/90)
+[2026-04-29T11:56:41.144+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 30.0 in stage 0.0 (TID 30) (5b0353f352af, executor 1, partition 30, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.150+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 29.0 in stage 0.0 (TID 29) in 87 ms on 5b0353f352af (executor 1) (30/90)
+[2026-04-29T11:56:41.217+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 31.0 in stage 0.0 (TID 31) (5b0353f352af, executor 1, partition 31, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.218+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 30.0 in stage 0.0 (TID 30) in 75 ms on 5b0353f352af (executor 1) (31/90)
+[2026-04-29T11:56:41.258+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 32.0 in stage 0.0 (TID 32) (5b0353f352af, executor 1, partition 32, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.390+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 31.0 in stage 0.0 (TID 31) in 44 ms on 5b0353f352af (executor 1) (32/90)
+[2026-04-29T11:56:41.485+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 33.0 in stage 0.0 (TID 33) (5b0353f352af, executor 1, partition 33, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.490+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 32.0 in stage 0.0 (TID 32) in 227 ms on 5b0353f352af (executor 1) (33/90)
+[2026-04-29T11:56:41.557+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 34.0 in stage 0.0 (TID 34) (5b0353f352af, executor 1, partition 34, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.563+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 33.0 in stage 0.0 (TID 33) in 165 ms on 5b0353f352af (executor 1) (34/90)
+[2026-04-29T11:56:41.700+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 35.0 in stage 0.0 (TID 35) (5b0353f352af, executor 1, partition 35, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.704+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 34.0 in stage 0.0 (TID 34) in 130 ms on 5b0353f352af (executor 1) (35/90)
+[2026-04-29T11:56:41.768+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 36.0 in stage 0.0 (TID 36) (5b0353f352af, executor 1, partition 36, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.771+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 35.0 in stage 0.0 (TID 35) in 88 ms on 5b0353f352af (executor 1) (36/90)
+[2026-04-29T11:56:41.836+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 37.0 in stage 0.0 (TID 37) (5b0353f352af, executor 1, partition 37, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.846+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 36.0 in stage 0.0 (TID 36) in 75 ms on 5b0353f352af (executor 1) (37/90)
+[2026-04-29T11:56:41.903+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 38.0 in stage 0.0 (TID 38) (5b0353f352af, executor 1, partition 38, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.904+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 37.0 in stage 0.0 (TID 37) in 68 ms on 5b0353f352af (executor 1) (38/90)
+[2026-04-29T11:56:41.964+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Starting task 39.0 in stage 0.0 (TID 39) (5b0353f352af, executor 1, partition 39, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:41.965+0000] {subprocess.py:106} INFO - 26/04/29 11:56:41 INFO TaskSetManager: Finished task 38.0 in stage 0.0 (TID 38) in 64 ms on 5b0353f352af (executor 1) (39/90)
+[2026-04-29T11:56:42.026+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 40.0 in stage 0.0 (TID 40) (5b0353f352af, executor 1, partition 40, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.031+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 39.0 in stage 0.0 (TID 39) in 68 ms on 5b0353f352af (executor 1) (40/90)
+[2026-04-29T11:56:42.081+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 41.0 in stage 0.0 (TID 41) (5b0353f352af, executor 1, partition 41, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.083+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 40.0 in stage 0.0 (TID 40) in 56 ms on 5b0353f352af (executor 1) (41/90)
+[2026-04-29T11:56:42.122+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 42.0 in stage 0.0 (TID 42) (5b0353f352af, executor 1, partition 42, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.125+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 41.0 in stage 0.0 (TID 41) in 47 ms on 5b0353f352af (executor 1) (42/90)
+[2026-04-29T11:56:42.182+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 43.0 in stage 0.0 (TID 43) (5b0353f352af, executor 1, partition 43, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.193+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 42.0 in stage 0.0 (TID 42) in 63 ms on 5b0353f352af (executor 1) (43/90)
+[2026-04-29T11:56:42.246+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 44.0 in stage 0.0 (TID 44) (5b0353f352af, executor 1, partition 44, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.247+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 43.0 in stage 0.0 (TID 43) in 60 ms on 5b0353f352af (executor 1) (44/90)
+[2026-04-29T11:56:42.288+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 45.0 in stage 0.0 (TID 45) (5b0353f352af, executor 1, partition 45, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.294+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 44.0 in stage 0.0 (TID 44) in 52 ms on 5b0353f352af (executor 1) (45/90)
+[2026-04-29T11:56:42.347+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 46.0 in stage 0.0 (TID 46) (5b0353f352af, executor 1, partition 46, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.349+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 45.0 in stage 0.0 (TID 45) in 62 ms on 5b0353f352af (executor 1) (46/90)
+[2026-04-29T11:56:42.413+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 47.0 in stage 0.0 (TID 47) (5b0353f352af, executor 1, partition 47, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.417+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 46.0 in stage 0.0 (TID 46) in 71 ms on 5b0353f352af (executor 1) (47/90)
+[2026-04-29T11:56:42.530+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 48.0 in stage 0.0 (TID 48) (5b0353f352af, executor 1, partition 48, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.643+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 47.0 in stage 0.0 (TID 47) in 230 ms on 5b0353f352af (executor 1) (48/90)
+[2026-04-29T11:56:42.694+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 49.0 in stage 0.0 (TID 49) (5b0353f352af, executor 1, partition 49, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.695+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 48.0 in stage 0.0 (TID 48) in 166 ms on 5b0353f352af (executor 1) (49/90)
+[2026-04-29T11:56:42.751+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 50.0 in stage 0.0 (TID 50) (5b0353f352af, executor 1, partition 50, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.753+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 49.0 in stage 0.0 (TID 49) in 59 ms on 5b0353f352af (executor 1) (50/90)
+[2026-04-29T11:56:42.814+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 51.0 in stage 0.0 (TID 51) (5b0353f352af, executor 1, partition 51, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.817+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 50.0 in stage 0.0 (TID 50) in 65 ms on 5b0353f352af (executor 1) (51/90)
+[2026-04-29T11:56:42.875+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 52.0 in stage 0.0 (TID 52) (5b0353f352af, executor 1, partition 52, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:42.877+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 51.0 in stage 0.0 (TID 51) in 60 ms on 5b0353f352af (executor 1) (52/90)
+[2026-04-29T11:56:43.858+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 53.0 in stage 0.0 (TID 53) (5b0353f352af, executor 1, partition 53, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:43.863+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 52.0 in stage 0.0 (TID 52) in 69 ms on 5b0353f352af (executor 1) (53/90)
+[2026-04-29T11:56:43.876+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Starting task 54.0 in stage 0.0 (TID 54) (5b0353f352af, executor 1, partition 54, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:43.878+0000] {subprocess.py:106} INFO - 26/04/29 11:56:42 INFO TaskSetManager: Finished task 53.0 in stage 0.0 (TID 53) in 45 ms on 5b0353f352af (executor 1) (54/90)
+[2026-04-29T11:56:43.909+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 55.0 in stage 0.0 (TID 55) (5b0353f352af, executor 1, partition 55, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:43.914+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 54.0 in stage 0.0 (TID 54) in 53 ms on 5b0353f352af (executor 1) (55/90)
+[2026-04-29T11:56:44.162+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 56.0 in stage 0.0 (TID 56) (5b0353f352af, executor 1, partition 56, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.166+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 55.0 in stage 0.0 (TID 55) in 41 ms on 5b0353f352af (executor 1) (56/90)
+[2026-04-29T11:56:44.168+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 57.0 in stage 0.0 (TID 57) (5b0353f352af, executor 1, partition 57, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.169+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 56.0 in stage 0.0 (TID 56) in 37 ms on 5b0353f352af (executor 1) (57/90)
+[2026-04-29T11:56:44.171+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 58.0 in stage 0.0 (TID 58) (5b0353f352af, executor 1, partition 58, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.173+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 57.0 in stage 0.0 (TID 57) in 43 ms on 5b0353f352af (executor 1) (58/90)
+[2026-04-29T11:56:44.221+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 59.0 in stage 0.0 (TID 59) (5b0353f352af, executor 1, partition 59, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.224+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 58.0 in stage 0.0 (TID 58) in 52 ms on 5b0353f352af (executor 1) (59/90)
+[2026-04-29T11:56:44.228+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 60.0 in stage 0.0 (TID 60) (5b0353f352af, executor 1, partition 60, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.230+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 59.0 in stage 0.0 (TID 59) in 57 ms on 5b0353f352af (executor 1) (60/90)
+[2026-04-29T11:56:44.231+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 61.0 in stage 0.0 (TID 61) (5b0353f352af, executor 1, partition 61, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.232+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 60.0 in stage 0.0 (TID 60) in 66 ms on 5b0353f352af (executor 1) (61/90)
+[2026-04-29T11:56:44.235+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 62.0 in stage 0.0 (TID 62) (5b0353f352af, executor 1, partition 62, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.240+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 61.0 in stage 0.0 (TID 61) in 59 ms on 5b0353f352af (executor 1) (62/90)
+[2026-04-29T11:56:44.249+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 63.0 in stage 0.0 (TID 63) (5b0353f352af, executor 1, partition 63, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.251+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 62.0 in stage 0.0 (TID 62) in 67 ms on 5b0353f352af (executor 1) (63/90)
+[2026-04-29T11:56:44.253+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 64.0 in stage 0.0 (TID 64) (5b0353f352af, executor 1, partition 64, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.255+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 63.0 in stage 0.0 (TID 63) in 55 ms on 5b0353f352af (executor 1) (64/90)
+[2026-04-29T11:56:44.271+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 65.0 in stage 0.0 (TID 65) (5b0353f352af, executor 1, partition 65, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.272+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 64.0 in stage 0.0 (TID 64) in 50 ms on 5b0353f352af (executor 1) (65/90)
+[2026-04-29T11:56:44.274+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Starting task 66.0 in stage 0.0 (TID 66) (5b0353f352af, executor 1, partition 66, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.275+0000] {subprocess.py:106} INFO - 26/04/29 11:56:43 INFO TaskSetManager: Finished task 65.0 in stage 0.0 (TID 65) in 430 ms on 5b0353f352af (executor 1) (66/90)
+[2026-04-29T11:56:44.276+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Starting task 67.0 in stage 0.0 (TID 67) (5b0353f352af, executor 1, partition 67, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.278+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Finished task 66.0 in stage 0.0 (TID 66) in 149 ms on 5b0353f352af (executor 1) (67/90)
+[2026-04-29T11:56:44.481+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Starting task 68.0 in stage 0.0 (TID 68) (5b0353f352af, executor 1, partition 68, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.494+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Finished task 67.0 in stage 0.0 (TID 67) in 165 ms on 5b0353f352af (executor 1) (68/90)
+[2026-04-29T11:56:44.517+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Starting task 69.0 in stage 0.0 (TID 69) (5b0353f352af, executor 1, partition 69, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.523+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Finished task 68.0 in stage 0.0 (TID 68) in 110 ms on 5b0353f352af (executor 1) (69/90)
+[2026-04-29T11:56:44.554+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Starting task 70.0 in stage 0.0 (TID 70) (5b0353f352af, executor 1, partition 70, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.559+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Finished task 69.0 in stage 0.0 (TID 69) in 159 ms on 5b0353f352af (executor 1) (70/90)
+[2026-04-29T11:56:44.643+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Starting task 71.0 in stage 0.0 (TID 71) (5b0353f352af, executor 1, partition 71, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.648+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Finished task 70.0 in stage 0.0 (TID 70) in 138 ms on 5b0353f352af (executor 1) (71/90)
+[2026-04-29T11:56:44.740+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Starting task 72.0 in stage 0.0 (TID 72) (5b0353f352af, executor 1, partition 72, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.775+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Finished task 71.0 in stage 0.0 (TID 71) in 117 ms on 5b0353f352af (executor 1) (72/90)
+[2026-04-29T11:56:44.883+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Starting task 73.0 in stage 0.0 (TID 73) (5b0353f352af, executor 1, partition 73, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.891+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Finished task 72.0 in stage 0.0 (TID 72) in 150 ms on 5b0353f352af (executor 1) (73/90)
+[2026-04-29T11:56:44.975+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Starting task 74.0 in stage 0.0 (TID 74) (5b0353f352af, executor 1, partition 74, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:44.982+0000] {subprocess.py:106} INFO - 26/04/29 11:56:44 INFO TaskSetManager: Finished task 73.0 in stage 0.0 (TID 73) in 100 ms on 5b0353f352af (executor 1) (74/90)
+[2026-04-29T11:56:45.037+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 75.0 in stage 0.0 (TID 75) (5b0353f352af, executor 1, partition 75, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:45.039+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 74.0 in stage 0.0 (TID 74) in 64 ms on 5b0353f352af (executor 1) (75/90)
+[2026-04-29T11:56:45.104+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 76.0 in stage 0.0 (TID 76) (5b0353f352af, executor 1, partition 76, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:45.110+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 75.0 in stage 0.0 (TID 75) in 73 ms on 5b0353f352af (executor 1) (76/90)
+[2026-04-29T11:56:45.179+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 77.0 in stage 0.0 (TID 77) (5b0353f352af, executor 1, partition 77, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:45.182+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 76.0 in stage 0.0 (TID 76) in 83 ms on 5b0353f352af (executor 1) (77/90)
+[2026-04-29T11:56:45.278+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 77.0 in stage 0.0 (TID 77) in 96 ms on 5b0353f352af (executor 1) (78/90)
+[2026-04-29T11:56:45.282+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 78.0 in stage 0.0 (TID 78) (5b0353f352af, executor 1, partition 78, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:45.392+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 79.0 in stage 0.0 (TID 79) (5b0353f352af, executor 1, partition 79, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:45.401+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 78.0 in stage 0.0 (TID 78) in 116 ms on 5b0353f352af (executor 1) (79/90)
+[2026-04-29T11:56:45.491+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 80.0 in stage 0.0 (TID 80) (5b0353f352af, executor 1, partition 80, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:45.499+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 79.0 in stage 0.0 (TID 79) in 109 ms on 5b0353f352af (executor 1) (80/90)
+[2026-04-29T11:56:45.559+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 81.0 in stage 0.0 (TID 81) (5b0353f352af, executor 1, partition 81, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:45.563+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 80.0 in stage 0.0 (TID 80) in 72 ms on 5b0353f352af (executor 1) (81/90)
+[2026-04-29T11:56:45.650+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 82.0 in stage 0.0 (TID 82) (5b0353f352af, executor 1, partition 82, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:45.655+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 81.0 in stage 0.0 (TID 81) in 94 ms on 5b0353f352af (executor 1) (82/90)
+[2026-04-29T11:56:45.749+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 83.0 in stage 0.0 (TID 83) (5b0353f352af, executor 1, partition 83, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:46.351+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 82.0 in stage 0.0 (TID 82) in 102 ms on 5b0353f352af (executor 1) (83/90)
+[2026-04-29T11:56:46.514+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 84.0 in stage 0.0 (TID 84) (5b0353f352af, executor 1, partition 84, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:46.580+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 83.0 in stage 0.0 (TID 83) in 53 ms on 5b0353f352af (executor 1) (84/90)
+[2026-04-29T11:56:46.608+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 85.0 in stage 0.0 (TID 85) (5b0353f352af, executor 1, partition 85, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:46.675+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 84.0 in stage 0.0 (TID 84) in 51 ms on 5b0353f352af (executor 1) (85/90)
+[2026-04-29T11:56:46.689+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 86.0 in stage 0.0 (TID 86) (5b0353f352af, executor 1, partition 86, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:47.030+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 85.0 in stage 0.0 (TID 85) in 48 ms on 5b0353f352af (executor 1) (86/90)
+[2026-04-29T11:56:47.073+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Starting task 87.0 in stage 0.0 (TID 87) (5b0353f352af, executor 1, partition 87, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:47.177+0000] {subprocess.py:106} INFO - 26/04/29 11:56:45 INFO TaskSetManager: Finished task 86.0 in stage 0.0 (TID 86) in 60 ms on 5b0353f352af (executor 1) (87/90)
+[2026-04-29T11:56:47.212+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO TaskSetManager: Starting task 88.0 in stage 0.0 (TID 88) (5b0353f352af, executor 1, partition 88, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:47.243+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO TaskSetManager: Finished task 87.0 in stage 0.0 (TID 87) in 53 ms on 5b0353f352af (executor 1) (88/90)
+[2026-04-29T11:56:47.311+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO TaskSetManager: Starting task 89.0 in stage 0.0 (TID 89) (5b0353f352af, executor 1, partition 89, PROCESS_LOCAL, 7815 bytes)
+[2026-04-29T11:56:47.340+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO TaskSetManager: Finished task 88.0 in stage 0.0 (TID 88) in 49 ms on 5b0353f352af (executor 1) (89/90)
+[2026-04-29T11:56:47.360+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO TaskSetManager: Finished task 89.0 in stage 0.0 (TID 89) in 49 ms on 5b0353f352af (executor 1) (90/90)
+[2026-04-29T11:56:47.368+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2026-04-29T11:56:47.372+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO DAGScheduler: ResultStage 0 (json at NativeMethodAccessorImpl.java:0) finished in 16.375 s
+[2026-04-29T11:56:47.373+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T11:56:47.374+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO YarnScheduler: Killing all running tasks in stage 0: Stage finished
+[2026-04-29T11:56:47.375+0000] {subprocess.py:106} INFO - 26/04/29 11:56:46 INFO DAGScheduler: Job 0 finished: json at NativeMethodAccessorImpl.java:0, took 17.082983 s
+[2026-04-29T11:56:47.376+0000] {subprocess.py:106} INFO - 26/04/29 11:56:47 INFO InMemoryFileIndex: It took 19768 ms to list leaf files for 90 paths.
+[2026-04-29T11:57:04.562+0000] {subprocess.py:106} INFO - 26/04/29 11:57:04 INFO FileSourceStrategy: Pushed Filters:
+[2026-04-29T11:57:04.568+0000] {subprocess.py:106} INFO - 26/04/29 11:57:04 INFO FileSourceStrategy: Post-Scan Filters:
+[2026-04-29T11:57:04.689+0000] {subprocess.py:106} INFO - 26/04/29 11:57:04 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 204.4 KiB, free 434.1 MiB)
+[2026-04-29T11:57:04.770+0000] {subprocess.py:106} INFO - 26/04/29 11:57:04 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 434.0 MiB)
+[2026-04-29T11:57:04.797+0000] {subprocess.py:106} INFO - 26/04/29 11:57:04 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.30.1.13:38135 (size: 34.8 KiB, free: 434.3 MiB)
+[2026-04-29T11:57:04.801+0000] {subprocess.py:106} INFO - 26/04/29 11:57:04 INFO SparkContext: Created broadcast 1 from json at NativeMethodAccessorImpl.java:0
+[2026-04-29T11:57:04.813+0000] {subprocess.py:106} INFO - 26/04/29 11:57:04 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.30.1.13:38135 in memory (size: 37.4 KiB, free: 434.4 MiB)
+[2026-04-29T11:57:04.843+0000] {subprocess.py:106} INFO - 26/04/29 11:57:04 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+[2026-04-29T11:57:04.860+0000] {subprocess.py:106} INFO - 26/04/29 11:57:04 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 5b0353f352af:33345 in memory (size: 37.4 KiB, free: 366.3 MiB)
+[2026-04-29T11:57:05.191+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO SparkContext: Starting job: json at NativeMethodAccessorImpl.java:0
+[2026-04-29T11:57:05.192+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO DAGScheduler: Got job 1 (json at NativeMethodAccessorImpl.java:0) with 3 output partitions
+[2026-04-29T11:57:05.193+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO DAGScheduler: Final stage: ResultStage 1 (json at NativeMethodAccessorImpl.java:0)
+[2026-04-29T11:57:05.199+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T11:57:05.200+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T11:57:05.201+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[5] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2026-04-29T11:57:05.234+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 16.7 KiB, free 434.2 MiB)
+[2026-04-29T11:57:05.254+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 7.8 KiB, free 434.1 MiB)
+[2026-04-29T11:57:05.255+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.30.1.13:38135 (size: 7.8 KiB, free: 434.4 MiB)
+[2026-04-29T11:57:05.255+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T11:57:05.256+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1 (MapPartitionsRDD[5] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2))
+[2026-04-29T11:57:05.256+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO YarnScheduler: Adding task set 1.0 with 3 tasks resource profile 0
+[2026-04-29T11:57:05.263+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 90) (5b0353f352af, executor 1, partition 0, PROCESS_LOCAL, 12324 bytes)
+[2026-04-29T11:57:05.331+0000] {subprocess.py:106} INFO - 26/04/29 11:57:05 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 5b0353f352af:33345 (size: 7.8 KiB, free: 366.3 MiB)
+[2026-04-29T11:57:07.914+0000] {subprocess.py:106} INFO - 26/04/29 11:57:07 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 5b0353f352af:33345 (size: 34.8 KiB, free: 366.3 MiB)
+[2026-04-29T11:57:09.035+0000] {subprocess.py:106} INFO - 26/04/29 11:57:09 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 91) (5b0353f352af, executor 1, partition 1, PROCESS_LOCAL, 12324 bytes)
+[2026-04-29T11:57:09.038+0000] {subprocess.py:106} INFO - 26/04/29 11:57:09 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 90) in 3780 ms on 5b0353f352af (executor 1) (1/3)
+[2026-04-29T11:57:09.956+0000] {subprocess.py:106} INFO - 26/04/29 11:57:09 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 92) (5b0353f352af, executor 1, partition 2, PROCESS_LOCAL, 11538 bytes)
+[2026-04-29T11:57:09.959+0000] {subprocess.py:106} INFO - 26/04/29 11:57:09 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 91) in 923 ms on 5b0353f352af (executor 1) (2/3)
+[2026-04-29T11:57:10.824+0000] {subprocess.py:106} INFO - 26/04/29 11:57:10 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 92) in 871 ms on 5b0353f352af (executor 1) (3/3)
+[2026-04-29T11:57:10.825+0000] {subprocess.py:106} INFO - 26/04/29 11:57:10 INFO YarnScheduler: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2026-04-29T11:57:10.833+0000] {subprocess.py:106} INFO - 26/04/29 11:57:10 INFO DAGScheduler: ResultStage 1 (json at NativeMethodAccessorImpl.java:0) finished in 5.796 s
+[2026-04-29T11:57:10.835+0000] {subprocess.py:106} INFO - 26/04/29 11:57:10 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T11:57:10.837+0000] {subprocess.py:106} INFO - 26/04/29 11:57:10 INFO YarnScheduler: Killing all running tasks in stage 1: Stage finished
+[2026-04-29T11:57:10.838+0000] {subprocess.py:106} INFO - 26/04/29 11:57:10 INFO DAGScheduler: Job 1 finished: json at NativeMethodAccessorImpl.java:0, took 5.811582 s
+[2026-04-29T11:57:11.456+0000] {subprocess.py:106} INFO - 26/04/29 11:57:11 INFO FileSourceStrategy: Pushed Filters:
+[2026-04-29T11:57:11.456+0000] {subprocess.py:106} INFO - 26/04/29 11:57:11 INFO FileSourceStrategy: Post-Scan Filters:
+[2026-04-29T11:57:12.144+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.30.1.25:50872) with ID 2,  ResourceProfileId 0
+[2026-04-29T11:57:12.586+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO BlockManagerMasterEndpoint: Registering block manager 1175ad6b07ce:35113 with 366.3 MiB RAM, BlockManagerId(2, 1175ad6b07ce, 35113, None)
+[2026-04-29T11:57:12.688+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO CodeGenerator: Code generated in 665.323936 ms
+[2026-04-29T11:57:12.694+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 204.3 KiB, free 433.9 MiB)
+[2026-04-29T11:57:12.722+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 433.9 MiB)
+[2026-04-29T11:57:12.724+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.30.1.13:38135 (size: 34.8 KiB, free: 434.3 MiB)
+[2026-04-29T11:57:12.736+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO SparkContext: Created broadcast 3 from showString at NativeMethodAccessorImpl.java:0
+[2026-04-29T11:57:12.743+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+[2026-04-29T11:57:12.777+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.30.1.13:38135 in memory (size: 34.8 KiB, free: 434.4 MiB)
+[2026-04-29T11:57:12.783+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 5b0353f352af:33345 in memory (size: 34.8 KiB, free: 366.3 MiB)
+[2026-04-29T11:57:12.858+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.30.1.13:38135 in memory (size: 7.8 KiB, free: 434.4 MiB)
+[2026-04-29T11:57:12.868+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 5b0353f352af:33345 in memory (size: 7.8 KiB, free: 366.3 MiB)
+[2026-04-29T11:57:12.881+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+[2026-04-29T11:57:12.896+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO DAGScheduler: Got job 2 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2026-04-29T11:57:12.898+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO DAGScheduler: Final stage: ResultStage 2 (showString at NativeMethodAccessorImpl.java:0)
+[2026-04-29T11:57:12.899+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T11:57:12.900+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T11:57:12.901+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[9] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2026-04-29T11:57:12.901+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 20.5 KiB, free 434.1 MiB)
+[2026-04-29T11:57:12.902+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 8.4 KiB, free 434.1 MiB)
+[2026-04-29T11:57:12.902+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.30.1.13:38135 (size: 8.4 KiB, free: 434.4 MiB)
+[2026-04-29T11:57:12.903+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T11:57:12.904+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[9] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2026-04-29T11:57:12.905+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO YarnScheduler: Adding task set 2.0 with 1 tasks resource profile 0
+[2026-04-29T11:57:12.905+0000] {subprocess.py:106} INFO - 26/04/29 11:57:12 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 93) (1175ad6b07ce, executor 2, partition 0, PROCESS_LOCAL, 12324 bytes)
+[2026-04-29T11:58:32.765+0000] {job.py:239} ERROR - Job heartbeat failed with error
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres_***" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 207, in heartbeat
+    self._merge_from(Job._fetch_from_db(self, session))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/retries.py", line 93, in wrapped_function
+    for attempt in run_with_db_retries(max_retries=retries, logger=logger, **retry_kwargs):
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 443, in __iter__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/retries.py", line 102, in wrapped_function
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 335, in _fetch_from_db
+    session.merge(job)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3056, in merge
+    return self._merge(
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3136, in _merge
+    merged = self.get(
+             ^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2853, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2975, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres_***" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-04-29T12:01:14.573+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-29T12:01:15.351+0000] {subprocess.py:106} INFO - 26/04/29 11:57:13 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 1175ad6b07ce:35113 (size: 8.4 KiB, free: 366.3 MiB)
+[2026-04-29T12:01:15.419+0000] {subprocess.py:106} INFO - 26/04/29 12:01:14 INFO AsyncEventQueue: Process of event SparkListenerExecutorMetricsUpdate(driver,WrappedArray(),Map((-1,-1) -> org.apache.spark.executor.ExecutorMetrics@67fce070)) by listener AppStatusListener took 22.95066387s.
+[2026-04-29T12:01:15.422+0000] {subprocess.py:106} INFO - 26/04/29 12:01:14 WARN HeartbeatReceiver: Removing executor 2 with no recent heartbeats: 167944 ms exceeds timeout 120000 ms
+[2026-04-29T12:01:15.424+0000] {subprocess.py:106} INFO - 26/04/29 12:01:14 WARN HeartbeatReceiver: Removing executor 1 with no recent heartbeats: 158846 ms exceeds timeout 120000 ms
+[2026-04-29T12:01:15.425+0000] {subprocess.py:106} INFO - 26/04/29 12:01:14 INFO YarnClientSchedulerBackend: Requesting to kill executor(s) 2
+[2026-04-29T12:01:15.425+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO YarnClientSchedulerBackend: Actual list of executor(s) to be killed is 2
+[2026-04-29T12:01:15.426+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO YarnClientSchedulerBackend: Requesting to kill executor(s) 1
+[2026-04-29T12:01:15.427+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO YarnClientSchedulerBackend: Actual list of executor(s) to be killed is 1
+[2026-04-29T12:01:15.428+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 ERROR YarnScheduler: Lost executor 2 on 1175ad6b07ce: Executor heartbeat timed out after 167944 ms
+[2026-04-29T12:01:15.428+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 ERROR Inbox: Ignoring error
+[2026-04-29T12:01:15.431+0000] {subprocess.py:106} INFO - java.lang.AssertionError: assertion failed: BlockManager re-registration shouldn't succeed when the executor is lost
+[2026-04-29T12:01:15.436+0000] {subprocess.py:106} INFO - 	at scala.Predef$.assert(Predef.scala:223)
+[2026-04-29T12:01:15.437+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint.org$apache$spark$storage$BlockManagerMasterEndpoint$$register(BlockManagerMasterEndpoint.scala:727)
+[2026-04-29T12:01:15.439+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint$$anonfun$receiveAndReply$1.applyOrElse(BlockManagerMasterEndpoint.scala:133)
+[2026-04-29T12:01:15.444+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:103)
+[2026-04-29T12:01:15.445+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:213)
+[2026-04-29T12:01:15.447+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:100)
+[2026-04-29T12:01:17.874+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:75)
+[2026-04-29T12:01:17.876+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:41)
+[2026-04-29T12:01:17.879+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2026-04-29T12:01:17.880+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2026-04-29T12:01:17.881+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2026-04-29T12:01:17.882+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 WARN TaskSetManager: Lost task 0.0 in stage 2.0 (TID 93) (1175ad6b07ce executor 2): ExecutorLostFailure (executor 2 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 167944 ms
+[2026-04-29T12:01:17.883+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 ERROR YarnScheduler: Lost executor 1 on 5b0353f352af: Executor heartbeat timed out after 158846 ms
+[2026-04-29T12:01:17.883+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 ERROR Inbox: Ignoring error
+[2026-04-29T12:01:17.884+0000] {subprocess.py:106} INFO - java.lang.AssertionError: assertion failed: BlockManager re-registration shouldn't succeed when the executor is lost
+[2026-04-29T12:01:17.884+0000] {subprocess.py:106} INFO - 	at scala.Predef$.assert(Predef.scala:223)
+[2026-04-29T12:01:17.886+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint.org$apache$spark$storage$BlockManagerMasterEndpoint$$register(BlockManagerMasterEndpoint.scala:727)
+[2026-04-29T12:01:17.887+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint$$anonfun$receiveAndReply$1.applyOrElse(BlockManagerMasterEndpoint.scala:133)
+[2026-04-29T12:01:17.887+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:103)
+[2026-04-29T12:01:17.888+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:213)
+[2026-04-29T12:01:17.888+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:100)
+[2026-04-29T12:01:17.889+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:75)
+[2026-04-29T12:01:17.889+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:41)
+[2026-04-29T12:01:17.890+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2026-04-29T12:01:17.891+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2026-04-29T12:01:17.892+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2026-04-29T12:01:17.892+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 1175ad6b07ce:35113 (size: 34.8 KiB, free: 366.3 MiB)
+[2026-04-29T12:01:17.893+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO DAGScheduler: Executor lost: 2 (epoch 0)
+[2026-04-29T12:01:17.893+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 ERROR Inbox: Ignoring error
+[2026-04-29T12:01:17.893+0000] {subprocess.py:106} INFO - java.lang.AssertionError: assertion failed: BlockManager re-registration shouldn't succeed when the executor is lost
+[2026-04-29T12:01:17.894+0000] {subprocess.py:106} INFO - 	at scala.Predef$.assert(Predef.scala:223)
+[2026-04-29T12:01:17.895+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint.org$apache$spark$storage$BlockManagerMasterEndpoint$$register(BlockManagerMasterEndpoint.scala:727)
+[2026-04-29T12:01:17.896+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint$$anonfun$receiveAndReply$1.applyOrElse(BlockManagerMasterEndpoint.scala:133)
+[2026-04-29T12:01:17.896+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:103)
+[2026-04-29T12:01:17.897+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:213)
+[2026-04-29T12:01:17.897+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:100)
+[2026-04-29T12:01:17.898+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:75)
+[2026-04-29T12:01:17.898+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:41)
+[2026-04-29T12:01:17.899+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2026-04-29T12:01:17.900+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2026-04-29T12:01:17.901+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2026-04-29T12:01:17.901+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO BlockManagerMasterEndpoint: Trying to remove executor 2 from BlockManagerMaster.
+[2026-04-29T12:01:17.902+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(2, 1175ad6b07ce, 35113, None)
+[2026-04-29T12:01:17.903+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO BlockManagerMaster: Removed 2 successfully in removeExecutor
+[2026-04-29T12:01:17.903+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO DAGScheduler: Shuffle files lost for executor: 2 (epoch 0)
+[2026-04-29T12:01:17.905+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO DAGScheduler: Executor lost: 1 (epoch 1)
+[2026-04-29T12:01:17.906+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 ERROR Inbox: Ignoring error
+[2026-04-29T12:01:17.906+0000] {subprocess.py:106} INFO - java.lang.AssertionError: assertion failed: BlockManager re-registration shouldn't succeed when the executor is lost
+[2026-04-29T12:01:17.907+0000] {subprocess.py:106} INFO - 	at scala.Predef$.assert(Predef.scala:223)
+[2026-04-29T12:01:17.907+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint.org$apache$spark$storage$BlockManagerMasterEndpoint$$register(BlockManagerMasterEndpoint.scala:727)
+[2026-04-29T12:01:17.907+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint$$anonfun$receiveAndReply$1.applyOrElse(BlockManagerMasterEndpoint.scala:133)
+[2026-04-29T12:01:17.908+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:103)
+[2026-04-29T12:01:17.908+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:213)
+[2026-04-29T12:01:17.909+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:100)
+[2026-04-29T12:01:17.910+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:75)
+[2026-04-29T12:01:17.913+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:41)
+[2026-04-29T12:01:17.916+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2026-04-29T12:01:17.917+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2026-04-29T12:01:17.918+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2026-04-29T12:01:17.920+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO BlockManagerMasterEndpoint: Trying to remove executor 1 from BlockManagerMaster.
+[2026-04-29T12:01:17.921+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(1, 5b0353f352af, 33345, None)
+[2026-04-29T12:01:17.922+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO BlockManagerMaster: Removed 1 successfully in removeExecutor
+[2026-04-29T12:01:17.923+0000] {subprocess.py:106} INFO - 26/04/29 12:01:15 INFO DAGScheduler: Shuffle files lost for executor: 1 (epoch 1)
+[2026-04-29T12:01:18.938+0000] {job.py:229} INFO - Heartbeat recovered after 245.81 seconds
+[2026-04-29T12:01:24.934+0000] {subprocess.py:106} INFO - 26/04/29 12:01:24 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.30.1.25:58642) with ID 3,  ResourceProfileId 0
+[2026-04-29T12:01:24.943+0000] {subprocess.py:106} INFO - 26/04/29 12:01:24 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.30.1.26:39056) with ID 4,  ResourceProfileId 0
+[2026-04-29T12:01:25.177+0000] {subprocess.py:106} INFO - 26/04/29 12:01:25 INFO BlockManagerMasterEndpoint: Registering block manager 1175ad6b07ce:44519 with 366.3 MiB RAM, BlockManagerId(3, 1175ad6b07ce, 44519, None)
+[2026-04-29T12:01:25.191+0000] {subprocess.py:106} INFO - 26/04/29 12:01:25 INFO BlockManagerMasterEndpoint: Registering block manager 5b0353f352af:40519 with 366.3 MiB RAM, BlockManagerId(4, 5b0353f352af, 40519, None)
+[2026-04-29T12:01:25.327+0000] {subprocess.py:106} INFO - 26/04/29 12:01:25 INFO TaskSetManager: Starting task 0.1 in stage 2.0 (TID 94) (1175ad6b07ce, executor 3, partition 0, PROCESS_LOCAL, 12324 bytes)
+[2026-04-29T12:01:25.859+0000] {subprocess.py:106} INFO - 26/04/29 12:01:25 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 1175ad6b07ce:44519 (size: 8.4 KiB, free: 366.3 MiB)
+[2026-04-29T12:01:29.203+0000] {subprocess.py:106} INFO - 26/04/29 12:01:29 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 1175ad6b07ce:44519 (size: 34.8 KiB, free: 366.3 MiB)
+[2026-04-29T12:01:29.797+0000] {subprocess.py:106} INFO - 26/04/29 12:01:29 INFO TaskSetManager: Finished task 0.1 in stage 2.0 (TID 94) in 4476 ms on 1175ad6b07ce (executor 3) (1/1)
+[2026-04-29T12:01:29.798+0000] {subprocess.py:106} INFO - 26/04/29 12:01:29 INFO YarnScheduler: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2026-04-29T12:01:29.799+0000] {subprocess.py:106} INFO - 26/04/29 12:01:29 INFO DAGScheduler: ResultStage 2 (showString at NativeMethodAccessorImpl.java:0) finished in 256.912 s
+[2026-04-29T12:01:29.800+0000] {subprocess.py:106} INFO - 26/04/29 12:01:29 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T12:01:29.801+0000] {subprocess.py:106} INFO - 26/04/29 12:01:29 INFO YarnScheduler: Killing all running tasks in stage 2: Stage finished
+[2026-04-29T12:01:29.801+0000] {subprocess.py:106} INFO - 26/04/29 12:01:29 INFO DAGScheduler: Job 2 finished: showString at NativeMethodAccessorImpl.java:0, took 270.830613 s
+[2026-04-29T12:01:29.904+0000] {subprocess.py:106} INFO - 26/04/29 12:01:29 INFO CodeGenerator: Code generated in 56.497232 ms
+[2026-04-29T12:01:29.936+0000] {subprocess.py:106} INFO - +----+-----+--------+-----+--------------------+-----+-----------+------+------+-----+--------+-----------------+-------------------+----------------+
+[2026-04-29T12:01:29.939+0000] {subprocess.py:106} INFO - | Age|Cabin|Embarked| Fare|                Name|Parch|PassengerId|Pclass|   Sex|SibSp|Survived|           Ticket|         event_time|          source|
+[2026-04-29T12:01:29.940+0000] {subprocess.py:106} INFO - +----+-----+--------+-----+--------------------+-----+-----------+------+------+-----+--------+-----------------+-------------------+----------------+
+[2026-04-29T12:01:29.944+0000] {subprocess.py:106} INFO - |28.0|  C52|       S|26.55|Bjornstrom-Steffa...|    0|        431|     1|  male|    0|       1|           110564|2026-04-28 22:33:49|SIMULATED_DEVICE|
+[2026-04-29T12:01:29.947+0000] {subprocess.py:106} INFO - |NULL| NULL|       S| 16.1|Thorneycroft, Mrs...|    0|        432|     3|female|    1|       1|           376564|2026-04-28 22:33:49|SIMULATED_DEVICE|
+[2026-04-29T12:01:29.948+0000] {subprocess.py:106} INFO - |42.0| NULL|       S| 26.0|Louch, Mrs. Charl...|    0|        433|     2|female|    1|       1|       SC/AH 3085|2026-04-28 22:33:49|SIMULATED_DEVICE|
+[2026-04-29T12:01:29.949+0000] {subprocess.py:106} INFO - |17.0| NULL|       S|7.125|Kallio, Mr. Nikol...|    0|        434|     3|  male|    0|       0|STON/O 2. 3101274|2026-04-28 22:33:49|SIMULATED_DEVICE|
+[2026-04-29T12:01:29.949+0000] {subprocess.py:106} INFO - |50.0|  E44|       S| 55.9|Silvey, Mr. Willi...|    0|        435|     1|  male|    1|       0|            13507|2026-04-28 22:33:49|SIMULATED_DEVICE|
+[2026-04-29T12:01:29.950+0000] {subprocess.py:106} INFO - +----+-----+--------+-----+--------------------+-----+-----------+------+------+-----+--------+-----------------+-------------------+----------------+
+[2026-04-29T12:01:29.951+0000] {subprocess.py:106} INFO - only showing top 5 rows
+[2026-04-29T12:01:29.951+0000] {subprocess.py:106} INFO - 
+[2026-04-29T12:01:30.196+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO FileSourceStrategy: Pushed Filters:
+[2026-04-29T12:01:30.197+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO FileSourceStrategy: Post-Scan Filters:
+[2026-04-29T12:01:30.414+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO CodeGenerator: Code generated in 20.807563 ms
+[2026-04-29T12:01:30.421+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 204.3 KiB, free 433.9 MiB)
+[2026-04-29T12:01:30.442+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.30.1.13:38135 in memory (size: 8.4 KiB, free: 434.4 MiB)
+[2026-04-29T12:01:30.455+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 433.9 MiB)
+[2026-04-29T12:01:30.459+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.30.1.13:38135 (size: 34.8 KiB, free: 434.3 MiB)
+[2026-04-29T12:01:30.460+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO SparkContext: Created broadcast 5 from count at NativeMethodAccessorImpl.java:0
+[2026-04-29T12:01:30.465+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+[2026-04-29T12:01:30.478+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 1175ad6b07ce:44519 in memory (size: 8.4 KiB, free: 366.3 MiB)
+[2026-04-29T12:01:30.542+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO DAGScheduler: Registering RDD 13 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 0
+[2026-04-29T12:01:30.550+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO DAGScheduler: Got map stage job 3 (count at NativeMethodAccessorImpl.java:0) with 3 output partitions
+[2026-04-29T12:01:30.555+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO DAGScheduler: Final stage: ShuffleMapStage 3 (count at NativeMethodAccessorImpl.java:0)
+[2026-04-29T12:01:30.556+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T12:01:30.557+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T12:01:30.558+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[13] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2026-04-29T12:01:30.584+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 17.0 KiB, free 433.9 MiB)
+[2026-04-29T12:01:30.596+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 433.9 MiB)
+[2026-04-29T12:01:30.597+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 172.30.1.13:38135 (size: 8.3 KiB, free: 434.3 MiB)
+[2026-04-29T12:01:30.599+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T12:01:30.599+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[13] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2))
+[2026-04-29T12:01:30.600+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO YarnScheduler: Adding task set 3.0 with 3 tasks resource profile 0
+[2026-04-29T12:01:30.601+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 95) (1175ad6b07ce, executor 3, partition 0, PROCESS_LOCAL, 12313 bytes)
+[2026-04-29T12:01:30.603+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 96) (5b0353f352af, executor 4, partition 1, PROCESS_LOCAL, 12313 bytes)
+[2026-04-29T12:01:30.686+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 1175ad6b07ce:44519 (size: 8.3 KiB, free: 366.3 MiB)
+[2026-04-29T12:01:30.889+0000] {subprocess.py:106} INFO - 26/04/29 12:01:30 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 1175ad6b07ce:44519 (size: 34.8 KiB, free: 366.2 MiB)
+[2026-04-29T12:01:31.223+0000] {subprocess.py:106} INFO - 26/04/29 12:01:31 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 5b0353f352af:40519 (size: 8.3 KiB, free: 366.3 MiB)
+[2026-04-29T12:01:32.501+0000] {subprocess.py:106} INFO - 26/04/29 12:01:32 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 97) (1175ad6b07ce, executor 3, partition 2, PROCESS_LOCAL, 11527 bytes)
+[2026-04-29T12:01:32.515+0000] {subprocess.py:106} INFO - 26/04/29 12:01:32 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 95) in 1910 ms on 1175ad6b07ce (executor 3) (1/3)
+[2026-04-29T12:01:33.501+0000] {subprocess.py:106} INFO - 26/04/29 12:01:33 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 97) in 995 ms on 1175ad6b07ce (executor 3) (2/3)
+[2026-04-29T12:01:33.888+0000] {subprocess.py:106} INFO - 26/04/29 12:01:33 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 5b0353f352af:40519 (size: 34.8 KiB, free: 366.3 MiB)

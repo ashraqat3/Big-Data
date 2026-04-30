@@ -1,0 +1,905 @@
+[2026-04-29T14:27:15.874+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-29T14:27:15.922+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: titanic_dag.loading manual__2026-04-29T14:23:18.251879+00:00 [queued]>
+[2026-04-29T14:27:15.945+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: titanic_dag.loading manual__2026-04-29T14:23:18.251879+00:00 [queued]>
+[2026-04-29T14:27:15.952+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2026-04-29T14:27:15.987+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): loading> on 2026-04-29 14:23:18.251879+00:00
+[2026-04-29T14:27:16.006+0000] {standard_task_runner.py:72} INFO - Started process 948 to run task
+[2026-04-29T14:27:16.014+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'titanic_dag', 'loading', 'manual__2026-04-29T14:23:18.251879+00:00', '--job-id', '193', '--raw', '--subdir', 'DAGS_FOLDER/titanic_dag.py', '--cfg-path', '/tmp/tmp753aaj5z']
+[2026-04-29T14:27:16.020+0000] {standard_task_runner.py:105} INFO - Job 193: Subtask loading
+[2026-04-29T14:27:16.164+0000] {task_command.py:467} INFO - Running <TaskInstance: titanic_dag.loading manual__2026-04-29T14:23:18.251879+00:00 [running]> on host 9fbda7c5f6bc
+[2026-04-29T14:27:16.372+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='titanic_dag' AIRFLOW_CTX_TASK_ID='loading' AIRFLOW_CTX_EXECUTION_DATE='2026-04-29T14:23:18.251879+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-29T14:23:18.251879+00:00'
+[2026-04-29T14:27:16.374+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-29T14:27:16.439+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-04-29T14:27:16.443+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        docker exec spark-jupyter spark-submit         --packages net.snowflake:spark-snowflake_2.12:2.16.0-spark_3.4,net.snowflake:snowflake-jdbc:3.13.22         /home/jovyan/work/Scripts/loading.py\n        ']
+[2026-04-29T14:27:16.471+0000] {subprocess.py:99} INFO - Output:
+[2026-04-29T14:27:21.883+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/usr/local/spark-3.5.0-bin-hadoop3/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-04-29T14:27:22.094+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /root/.ivy2/cache
+[2026-04-29T14:27:22.096+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /root/.ivy2/jars
+[2026-04-29T14:27:22.106+0000] {subprocess.py:106} INFO - net.snowflake#spark-snowflake_2.12 added as a dependency
+[2026-04-29T14:27:22.108+0000] {subprocess.py:106} INFO - net.snowflake#snowflake-jdbc added as a dependency
+[2026-04-29T14:27:22.109+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-c8390ae2-de65-428f-8f6d-dcdfaa8f6617;1.0
+[2026-04-29T14:27:22.110+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-04-29T14:27:22.433+0000] {subprocess.py:106} INFO - 	found net.snowflake#spark-snowflake_2.12;2.16.0-spark_3.4 in central
+[2026-04-29T14:27:22.493+0000] {subprocess.py:106} INFO - 	found net.snowflake#snowflake-jdbc;3.16.1 in central
+[2026-04-29T14:27:22.536+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 418ms :: artifacts dl 9ms
+[2026-04-29T14:27:22.537+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2026-04-29T14:27:22.538+0000] {subprocess.py:106} INFO - 	net.snowflake#snowflake-jdbc;3.16.1 from central in [default]
+[2026-04-29T14:27:22.540+0000] {subprocess.py:106} INFO - 	net.snowflake#spark-snowflake_2.12;2.16.0-spark_3.4 from central in [default]
+[2026-04-29T14:27:22.541+0000] {subprocess.py:106} INFO - 	:: evicted modules:
+[2026-04-29T14:27:22.543+0000] {subprocess.py:106} INFO - 	net.snowflake#snowflake-jdbc;3.13.22 by [net.snowflake#snowflake-jdbc;3.16.1] in [default]
+[2026-04-29T14:27:22.544+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-04-29T14:27:22.545+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-04-29T14:27:22.546+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-04-29T14:27:22.547+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-04-29T14:27:22.548+0000] {subprocess.py:106} INFO - 	|      default     |   3   |   0   |   0   |   1   ||   2   |   0   |
+[2026-04-29T14:27:22.549+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-04-29T14:27:22.550+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-c8390ae2-de65-428f-8f6d-dcdfaa8f6617
+[2026-04-29T14:27:22.550+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-04-29T14:27:22.558+0000] {subprocess.py:106} INFO - 	0 artifacts copied, 2 already retrieved (0kB/10ms)
+[2026-04-29T14:27:23.116+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-04-29T14:27:23.868+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO SparkContext: Running Spark version 3.5.0
+[2026-04-29T14:27:23.870+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO SparkContext: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+[2026-04-29T14:27:23.871+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO SparkContext: Java version 17.0.8.1
+[2026-04-29T14:27:23.923+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO ResourceUtils: ==============================================================
+[2026-04-29T14:27:23.924+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2026-04-29T14:27:23.925+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO ResourceUtils: ==============================================================
+[2026-04-29T14:27:23.927+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO SparkContext: Submitted application: Snowflake_Load_Layer
+[2026-04-29T14:27:23.973+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 512, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2026-04-29T14:27:23.992+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2026-04-29T14:27:23.996+0000] {subprocess.py:106} INFO - 26/04/29 14:27:23 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2026-04-29T14:27:24.140+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO SecurityManager: Changing view acls to: root
+[2026-04-29T14:27:24.141+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO SecurityManager: Changing modify acls to: root
+[2026-04-29T14:27:24.144+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO SecurityManager: Changing view acls groups to:
+[2026-04-29T14:27:24.147+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO SecurityManager: Changing modify acls groups to:
+[2026-04-29T14:27:24.149+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+[2026-04-29T14:27:24.739+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO Utils: Successfully started service 'sparkDriver' on port 32915.
+[2026-04-29T14:27:24.812+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO SparkEnv: Registering MapOutputTracker
+[2026-04-29T14:27:24.886+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO SparkEnv: Registering BlockManagerMaster
+[2026-04-29T14:27:24.952+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2026-04-29T14:27:24.954+0000] {subprocess.py:106} INFO - 26/04/29 14:27:24 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2026-04-29T14:27:25.017+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2026-04-29T14:27:25.065+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b011925e-8b3c-4473-88fd-7371fd48f8b4
+[2026-04-29T14:27:25.103+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2026-04-29T14:27:25.183+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO SparkEnv: Registering OutputCommitCoordinator
+[2026-04-29T14:27:25.497+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2026-04-29T14:27:25.640+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2026-04-29T14:27:25.736+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO SparkContext: Added JAR file:///root/.ivy2/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar at spark://172.30.1.13:32915/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar with timestamp 1777472843852
+[2026-04-29T14:27:25.738+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO SparkContext: Added JAR file:///root/.ivy2/jars/net.snowflake_snowflake-jdbc-3.16.1.jar at spark://172.30.1.13:32915/jars/net.snowflake_snowflake-jdbc-3.16.1.jar with timestamp 1777472843852
+[2026-04-29T14:27:25.748+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO SparkContext: Added file file:///root/.ivy2/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar at spark://172.30.1.13:32915/files/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar with timestamp 1777472843852
+[2026-04-29T14:27:25.752+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO Utils: Copying /root/.ivy2/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar to /tmp/spark-a5a4ce75-0e25-43f5-b85d-9887def000af/userFiles-b708222c-720d-41f8-bc3c-73dc2470c153/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar
+[2026-04-29T14:27:25.786+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO SparkContext: Added file file:///root/.ivy2/jars/net.snowflake_snowflake-jdbc-3.16.1.jar at spark://172.30.1.13:32915/files/net.snowflake_snowflake-jdbc-3.16.1.jar with timestamp 1777472843852
+[2026-04-29T14:27:25.789+0000] {subprocess.py:106} INFO - 26/04/29 14:27:25 INFO Utils: Copying /root/.ivy2/jars/net.snowflake_snowflake-jdbc-3.16.1.jar to /tmp/spark-a5a4ce75-0e25-43f5-b85d-9887def000af/userFiles-b708222c-720d-41f8-bc3c-73dc2470c153/net.snowflake_snowflake-jdbc-3.16.1.jar
+[2026-04-29T14:27:26.502+0000] {subprocess.py:106} INFO - 26/04/29 14:27:26 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at resourcemanager/172.30.1.24:8032
+[2026-04-29T14:27:28.054+0000] {subprocess.py:106} INFO - 26/04/29 14:27:28 INFO Configuration: resource-types.xml not found
+[2026-04-29T14:27:28.056+0000] {subprocess.py:106} INFO - 26/04/29 14:27:28 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+[2026-04-29T14:27:28.084+0000] {subprocess.py:106} INFO - 26/04/29 14:27:28 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+[2026-04-29T14:27:28.086+0000] {subprocess.py:106} INFO - 26/04/29 14:27:28 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+[2026-04-29T14:27:28.087+0000] {subprocess.py:106} INFO - 26/04/29 14:27:28 INFO Client: Setting up container launch context for our AM
+[2026-04-29T14:27:28.088+0000] {subprocess.py:106} INFO - 26/04/29 14:27:28 INFO Client: Setting up the launch environment for our AM container
+[2026-04-29T14:27:28.095+0000] {subprocess.py:106} INFO - 26/04/29 14:27:28 INFO Client: Preparing resources for our AM container
+[2026-04-29T14:27:28.150+0000] {subprocess.py:106} INFO - 26/04/29 14:27:28 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+[2026-04-29T14:27:35.482+0000] {subprocess.py:106} INFO - 26/04/29 14:27:35 INFO Client: Uploading resource file:/tmp/spark-a5a4ce75-0e25-43f5-b85d-9887def000af/__spark_libs__9756944648531203158.zip -> hdfs://hadoop-namenode:9000/user/root/.sparkStaging/application_1777471681820_0007/__spark_libs__9756944648531203158.zip
+[2026-04-29T14:27:39.691+0000] {subprocess.py:106} INFO - 26/04/29 14:27:39 INFO Client: Uploading resource file:/tmp/spark-a5a4ce75-0e25-43f5-b85d-9887def000af/__spark_conf__11701991294324922734.zip -> hdfs://hadoop-namenode:9000/user/root/.sparkStaging/application_1777471681820_0007/__spark_conf__.zip
+[2026-04-29T14:27:39.859+0000] {subprocess.py:106} INFO - 26/04/29 14:27:39 INFO SecurityManager: Changing view acls to: root
+[2026-04-29T14:27:39.869+0000] {subprocess.py:106} INFO - 26/04/29 14:27:39 INFO SecurityManager: Changing modify acls to: root
+[2026-04-29T14:27:39.871+0000] {subprocess.py:106} INFO - 26/04/29 14:27:39 INFO SecurityManager: Changing view acls groups to:
+[2026-04-29T14:27:39.873+0000] {subprocess.py:106} INFO - 26/04/29 14:27:39 INFO SecurityManager: Changing modify acls groups to:
+[2026-04-29T14:27:39.874+0000] {subprocess.py:106} INFO - 26/04/29 14:27:39 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+[2026-04-29T14:27:39.894+0000] {subprocess.py:106} INFO - 26/04/29 14:27:39 INFO Client: Submitting application application_1777471681820_0007 to ResourceManager
+[2026-04-29T14:27:39.961+0000] {subprocess.py:106} INFO - 26/04/29 14:27:39 INFO YarnClientImpl: Submitted application application_1777471681820_0007
+[2026-04-29T14:27:40.971+0000] {subprocess.py:106} INFO - 26/04/29 14:27:40 INFO Client: Application report for application_1777471681820_0007 (state: ACCEPTED)
+[2026-04-29T14:27:40.978+0000] {subprocess.py:106} INFO - 26/04/29 14:27:40 INFO Client:
+[2026-04-29T14:27:40.979+0000] {subprocess.py:106} INFO - 	 client token: N/A
+[2026-04-29T14:27:40.980+0000] {subprocess.py:106} INFO - 	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+[2026-04-29T14:27:40.981+0000] {subprocess.py:106} INFO - 	 ApplicationMaster host: N/A
+[2026-04-29T14:27:40.983+0000] {subprocess.py:106} INFO - 	 ApplicationMaster RPC port: -1
+[2026-04-29T14:27:40.984+0000] {subprocess.py:106} INFO - 	 queue: default
+[2026-04-29T14:27:40.985+0000] {subprocess.py:106} INFO - 	 start time: 1777472859919
+[2026-04-29T14:27:40.985+0000] {subprocess.py:106} INFO - 	 final status: UNDEFINED
+[2026-04-29T14:27:40.986+0000] {subprocess.py:106} INFO - 	 tracking URL: http://resourcemanager:8088/proxy/application_1777471681820_0007/
+[2026-04-29T14:27:40.988+0000] {subprocess.py:106} INFO - 	 user: root
+[2026-04-29T14:27:54.758+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO Client: Application report for application_1777471681820_0007 (state: RUNNING)
+[2026-04-29T14:27:54.760+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO Client:
+[2026-04-29T14:27:54.764+0000] {subprocess.py:106} INFO - 	 client token: N/A
+[2026-04-29T14:27:54.766+0000] {subprocess.py:106} INFO - 	 diagnostics: N/A
+[2026-04-29T14:27:54.769+0000] {subprocess.py:106} INFO - 	 ApplicationMaster host: 172.30.1.26
+[2026-04-29T14:27:54.771+0000] {subprocess.py:106} INFO - 	 ApplicationMaster RPC port: -1
+[2026-04-29T14:27:54.772+0000] {subprocess.py:106} INFO - 	 queue: default
+[2026-04-29T14:27:54.773+0000] {subprocess.py:106} INFO - 	 start time: 1777472859919
+[2026-04-29T14:27:54.774+0000] {subprocess.py:106} INFO - 	 final status: UNDEFINED
+[2026-04-29T14:27:54.775+0000] {subprocess.py:106} INFO - 	 tracking URL: http://resourcemanager:8088/proxy/application_1777471681820_0007/
+[2026-04-29T14:27:54.775+0000] {subprocess.py:106} INFO - 	 user: root
+[2026-04-29T14:27:54.777+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO YarnClientSchedulerBackend: Application application_1777471681820_0007 has started running.
+[2026-04-29T14:27:54.787+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34209.
+[2026-04-29T14:27:54.788+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO NettyBlockTransferService: Server created on 172.30.1.13 0.0.0.0:34209
+[2026-04-29T14:27:54.791+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2026-04-29T14:27:54.806+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 172.30.1.13, 34209, None)
+[2026-04-29T14:27:54.812+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO BlockManagerMasterEndpoint: Registering block manager 172.30.1.13:34209 with 434.4 MiB RAM, BlockManagerId(driver, 172.30.1.13, 34209, None)
+[2026-04-29T14:27:54.817+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 172.30.1.13, 34209, None)
+[2026-04-29T14:27:54.820+0000] {subprocess.py:106} INFO - 26/04/29 14:27:54 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 172.30.1.13, 34209, None)
+[2026-04-29T14:27:55.192+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> resourcemanager, PROXY_URI_BASES -> http://resourcemanager:8088/proxy/application_1777471681820_0007), /proxy/application_1777471681820_0007
+[2026-04-29T14:27:55.354+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /jobs: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.371+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /jobs/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.372+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /jobs/job: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.376+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /jobs/job/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.380+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /stages: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.383+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /stages/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.388+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /stages/stage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.397+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /stages/stage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.399+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /stages/pool: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.401+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /stages/pool/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.407+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /storage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.412+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /storage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.416+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /storage/rdd: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.420+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /storage/rdd/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.428+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /environment: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.429+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /environment/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.433+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /executors: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.437+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /executors/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.441+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /executors/threadDump: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.448+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /executors/threadDump/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.451+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /executors/heapHistogram: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.458+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /executors/heapHistogram/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.463+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /static: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.510+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.514+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /api: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.520+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /jobs/job/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.523+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /stages/stage/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.536+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /metrics/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.541+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after waiting maxRegisteredResourcesWaitingTime: 30000000000(ns)
+[2026-04-29T14:27:55.930+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+[2026-04-29T14:27:55.934+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2026-04-29T14:27:55.939+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO SharedState: Warehouse path is 'file:/home/jovyan/spark-warehouse'.
+[2026-04-29T14:27:55.962+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /SQL: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.966+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /SQL/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.970+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /SQL/execution: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.973+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /SQL/execution/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:55.978+0000] {subprocess.py:106} INFO - 26/04/29 14:27:55 INFO ServerInfo: Adding filter to /static/sql: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+[2026-04-29T14:27:59.612+0000] {subprocess.py:106} INFO - 26/04/29 14:27:59 INFO InMemoryFileIndex: It took 174 ms to list leaf files for 1 paths.
+[2026-04-29T14:28:01.286+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2026-04-29T14:28:01.317+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO DAGScheduler: Got job 0 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2026-04-29T14:28:01.318+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO DAGScheduler: Final stage: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0)
+[2026-04-29T14:28:01.319+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T14:28:01.321+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T14:28:01.329+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2026-04-29T14:28:01.437+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 105.5 KiB, free 434.3 MiB)
+[2026-04-29T14:28:01.541+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 38.3 KiB, free 434.3 MiB)
+[2026-04-29T14:28:01.542+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.30.1.13:34209 (size: 38.3 KiB, free: 434.4 MiB)
+[2026-04-29T14:28:01.543+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T14:28:01.544+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2026-04-29T14:28:01.545+0000] {subprocess.py:106} INFO - 26/04/29 14:28:01 INFO YarnScheduler: Adding task set 0.0 with 1 tasks resource profile 0
+[2026-04-29T14:28:09.466+0000] {subprocess.py:106} INFO - 26/04/29 14:28:09 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.30.1.26:56172) with ID 1,  ResourceProfileId 0
+[2026-04-29T14:28:09.792+0000] {subprocess.py:106} INFO - 26/04/29 14:28:09 INFO BlockManagerMasterEndpoint: Registering block manager 5b0353f352af:45831 with 93.3 MiB RAM, BlockManagerId(1, 5b0353f352af, 45831, None)
+[2026-04-29T14:28:13.785+0000] {subprocess.py:106} INFO - 26/04/29 14:28:13 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (5b0353f352af, executor 1, partition 0, PROCESS_LOCAL, 8337 bytes)
+[2026-04-29T14:28:16.611+0000] {subprocess.py:106} INFO - 26/04/29 14:28:16 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 5b0353f352af:45831 (size: 38.3 KiB, free: 93.3 MiB)
+[2026-04-29T14:28:19.442+0000] {subprocess.py:106} INFO - 26/04/29 14:28:19 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 5685 ms on 5b0353f352af (executor 1) (1/1)
+[2026-04-29T14:28:19.449+0000] {subprocess.py:106} INFO - 26/04/29 14:28:19 INFO YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2026-04-29T14:28:19.462+0000] {subprocess.py:106} INFO - 26/04/29 14:28:19 INFO DAGScheduler: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0) finished in 18.111 s
+[2026-04-29T14:28:19.468+0000] {subprocess.py:106} INFO - 26/04/29 14:28:19 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T14:28:19.470+0000] {subprocess.py:106} INFO - 26/04/29 14:28:19 INFO YarnScheduler: Killing all running tasks in stage 0: Stage finished
+[2026-04-29T14:28:19.474+0000] {subprocess.py:106} INFO - 26/04/29 14:28:19 INFO DAGScheduler: Job 0 finished: parquet at NativeMethodAccessorImpl.java:0, took 20.498203 s
+[2026-04-29T14:28:21.372+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO InMemoryFileIndex: It took 11 ms to list leaf files for 1 paths.
+[2026-04-29T14:28:21.646+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.30.1.13:34209 in memory (size: 38.3 KiB, free: 434.4 MiB)
+[2026-04-29T14:28:21.653+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2026-04-29T14:28:21.656+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO DAGScheduler: Got job 1 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2026-04-29T14:28:21.660+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO DAGScheduler: Final stage: ResultStage 1 (parquet at NativeMethodAccessorImpl.java:0)
+[2026-04-29T14:28:21.662+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T14:28:21.663+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T14:28:21.664+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[3] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2026-04-29T14:28:21.666+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 5b0353f352af:45831 in memory (size: 38.3 KiB, free: 93.3 MiB)
+[2026-04-29T14:28:21.686+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 105.5 KiB, free 434.3 MiB)
+[2026-04-29T14:28:21.698+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 38.3 KiB, free 434.3 MiB)
+[2026-04-29T14:28:21.700+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.30.1.13:34209 (size: 38.3 KiB, free: 434.4 MiB)
+[2026-04-29T14:28:21.702+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T14:28:21.712+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[3] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2026-04-29T14:28:21.713+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO YarnScheduler: Adding task set 1.0 with 1 tasks resource profile 0
+[2026-04-29T14:28:21.722+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (5b0353f352af, executor 1, partition 0, PROCESS_LOCAL, 8336 bytes)
+[2026-04-29T14:28:21.783+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 5b0353f352af:45831 (size: 38.3 KiB, free: 93.3 MiB)
+[2026-04-29T14:28:21.878+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 157 ms on 5b0353f352af (executor 1) (1/1)
+[2026-04-29T14:28:21.880+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO YarnScheduler: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2026-04-29T14:28:21.882+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO DAGScheduler: ResultStage 1 (parquet at NativeMethodAccessorImpl.java:0) finished in 0.218 s
+[2026-04-29T14:28:21.883+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T14:28:21.884+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO YarnScheduler: Killing all running tasks in stage 1: Stage finished
+[2026-04-29T14:28:21.885+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO DAGScheduler: Job 1 finished: parquet at NativeMethodAccessorImpl.java:0, took 0.230071 s
+[2026-04-29T14:28:21.941+0000] {subprocess.py:106} INFO - 26/04/29 14:28:21 INFO InMemoryFileIndex: It took 11 ms to list leaf files for 1 paths.
+[2026-04-29T14:28:22.018+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2026-04-29T14:28:22.021+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Got job 2 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2026-04-29T14:28:22.022+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Final stage: ResultStage 2 (parquet at NativeMethodAccessorImpl.java:0)
+[2026-04-29T14:28:22.023+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T14:28:22.024+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T14:28:22.025+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[5] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2026-04-29T14:28:22.050+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 105.5 KiB, free 434.2 MiB)
+[2026-04-29T14:28:22.057+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 38.3 KiB, free 434.1 MiB)
+[2026-04-29T14:28:22.060+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.30.1.13:34209 (size: 38.3 KiB, free: 434.3 MiB)
+[2026-04-29T14:28:22.062+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T14:28:22.064+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[5] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2026-04-29T14:28:22.065+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO YarnScheduler: Adding task set 2.0 with 1 tasks resource profile 0
+[2026-04-29T14:28:22.070+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (5b0353f352af, executor 1, partition 0, PROCESS_LOCAL, 8335 bytes)
+[2026-04-29T14:28:22.107+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 5b0353f352af:45831 (size: 38.3 KiB, free: 93.2 MiB)
+[2026-04-29T14:28:22.189+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 116 ms on 5b0353f352af (executor 1) (1/1)
+[2026-04-29T14:28:22.192+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO YarnScheduler: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2026-04-29T14:28:22.194+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: ResultStage 2 (parquet at NativeMethodAccessorImpl.java:0) finished in 0.159 s
+[2026-04-29T14:28:22.195+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T14:28:22.196+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO YarnScheduler: Killing all running tasks in stage 2: Stage finished
+[2026-04-29T14:28:22.196+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Job 2 finished: parquet at NativeMethodAccessorImpl.java:0, took 0.170679 s
+[2026-04-29T14:28:22.244+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO InMemoryFileIndex: It took 8 ms to list leaf files for 1 paths.
+[2026-04-29T14:28:22.322+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+[2026-04-29T14:28:22.324+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Got job 3 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2026-04-29T14:28:22.327+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Final stage: ResultStage 3 (parquet at NativeMethodAccessorImpl.java:0)
+[2026-04-29T14:28:22.328+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T14:28:22.329+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T14:28:22.331+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[7] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2026-04-29T14:28:22.348+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 105.5 KiB, free 434.0 MiB)
+[2026-04-29T14:28:22.353+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 38.3 KiB, free 434.0 MiB)
+[2026-04-29T14:28:22.355+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.30.1.13:34209 (size: 38.3 KiB, free: 434.3 MiB)
+[2026-04-29T14:28:22.359+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T14:28:22.360+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[7] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2026-04-29T14:28:22.361+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO YarnScheduler: Adding task set 3.0 with 1 tasks resource profile 0
+[2026-04-29T14:28:22.364+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3) (5b0353f352af, executor 1, partition 0, PROCESS_LOCAL, 8332 bytes)
+[2026-04-29T14:28:22.396+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 5b0353f352af:45831 (size: 38.3 KiB, free: 93.2 MiB)
+[2026-04-29T14:28:22.464+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 100 ms on 5b0353f352af (executor 1) (1/1)
+[2026-04-29T14:28:22.465+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO YarnScheduler: Removed TaskSet 3.0, whose tasks have all completed, from pool
+[2026-04-29T14:28:22.466+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: ResultStage 3 (parquet at NativeMethodAccessorImpl.java:0) finished in 0.136 s
+[2026-04-29T14:28:22.467+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T14:28:22.468+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO YarnScheduler: Killing all running tasks in stage 3: Stage finished
+[2026-04-29T14:28:22.469+0000] {subprocess.py:106} INFO - 26/04/29 14:28:22 INFO DAGScheduler: Job 3 finished: parquet at NativeMethodAccessorImpl.java:0, took 0.145283 s
+[2026-04-29T14:28:23.135+0000] {subprocess.py:106} INFO - 26/04/29 14:28:23 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.30.1.13:34209 in memory (size: 38.3 KiB, free: 434.3 MiB)
+[2026-04-29T14:28:23.141+0000] {subprocess.py:106} INFO - 26/04/29 14:28:23 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 5b0353f352af:45831 in memory (size: 38.3 KiB, free: 93.2 MiB)
+[2026-04-29T14:28:23.175+0000] {subprocess.py:106} INFO - 26/04/29 14:28:23 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 172.30.1.13:34209 in memory (size: 38.3 KiB, free: 434.4 MiB)
+[2026-04-29T14:28:23.191+0000] {subprocess.py:106} INFO - 26/04/29 14:28:23 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 5b0353f352af:45831 in memory (size: 38.3 KiB, free: 93.3 MiB)
+[2026-04-29T14:28:23.213+0000] {subprocess.py:106} INFO - 26/04/29 14:28:23 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.30.1.13:34209 in memory (size: 38.3 KiB, free: 434.4 MiB)
+[2026-04-29T14:28:23.221+0000] {subprocess.py:106} INFO - 26/04/29 14:28:23 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 5b0353f352af:45831 in memory (size: 38.3 KiB, free: 93.3 MiB)
+[2026-04-29T14:28:25.104+0000] {subprocess.py:106} INFO - 26/04/29 14:28:25 WARN SnowflakeConnectorUtils$: Query pushdown is not supported because you are using Spark 3.5.0 with a connector designed to support Spark 3.4. Either use the version of Spark supported by the connector or install a version of the connector that supports your version of Spark.
+[2026-04-29T14:28:25.234+0000] {subprocess.py:106} INFO - 26/04/29 14:28:25 INFO FileSourceStrategy: Pushed Filters:
+[2026-04-29T14:28:25.238+0000] {subprocess.py:106} INFO - 26/04/29 14:28:25 INFO FileSourceStrategy: Post-Scan Filters:
+[2026-04-29T14:28:25.242+0000] {subprocess.py:106} INFO - 26/04/29 14:28:25 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.30.1.25:46800) with ID 2,  ResourceProfileId 0
+[2026-04-29T14:28:25.413+0000] {subprocess.py:106} INFO - 26/04/29 14:28:25 INFO BlockManagerMasterEndpoint: Registering block manager 1175ad6b07ce:41685 with 93.3 MiB RAM, BlockManagerId(2, 1175ad6b07ce, 41685, None)
+[2026-04-29T14:28:25.975+0000] {subprocess.py:106} INFO - 26/04/29 14:28:25 INFO CodeGenerator: Code generated in 533.079156 ms
+[2026-04-29T14:28:26.043+0000] {subprocess.py:106} INFO - 26/04/29 14:28:26 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 208.8 KiB, free 434.2 MiB)
+[2026-04-29T14:28:26.067+0000] {subprocess.py:106} INFO - 26/04/29 14:28:26 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 36.4 KiB, free 434.2 MiB)
+[2026-04-29T14:28:26.070+0000] {subprocess.py:106} INFO - 26/04/29 14:28:26 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.30.1.13:34209 (size: 36.4 KiB, free: 434.4 MiB)
+[2026-04-29T14:28:26.072+0000] {subprocess.py:106} INFO - 26/04/29 14:28:26 INFO SparkContext: Created broadcast 4 from rdd at SnowflakeWriter.scala:86
+[2026-04-29T14:28:26.099+0000] {subprocess.py:106} INFO - 26/04/29 14:28:26 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2026-04-29T14:28:32.170+0000] {subprocess.py:106} INFO - 26/04/29 14:28:32 INFO ServerConnection$: Create ServerConnection with new JDBC connection: 3770753625
+[2026-04-29T14:28:32.198+0000] {subprocess.py:106} INFO - 26/04/29 14:28:32 INFO SparkConnectorContext$: Spark Connector system config: {
+[2026-04-29T14:28:32.200+0000] {subprocess.py:106} INFO -   "spark_connector_version" : "2.16.0",
+[2026-04-29T14:28:32.201+0000] {subprocess.py:106} INFO -   "spark_version" : "3.5.0",
+[2026-04-29T14:28:32.202+0000] {subprocess.py:106} INFO -   "application_name" : "Snowflake_Load_Layer",
+[2026-04-29T14:28:32.203+0000] {subprocess.py:106} INFO -   "scala_version" : "2.12.18",
+[2026-04-29T14:28:32.204+0000] {subprocess.py:106} INFO -   "java_version" : "17.0.8.1",
+[2026-04-29T14:28:32.205+0000] {subprocess.py:106} INFO -   "jdbc_version" : "3.16.1",
+[2026-04-29T14:28:32.206+0000] {subprocess.py:106} INFO -   "certified_jdbc_version" : "3.16.1",
+[2026-04-29T14:28:32.207+0000] {subprocess.py:106} INFO -   "os_name" : "Linux",
+[2026-04-29T14:28:32.209+0000] {subprocess.py:106} INFO -   "max_memory_in_mb" : 1024,
+[2026-04-29T14:28:32.210+0000] {subprocess.py:106} INFO -   "total_memory_in_mb" : 133,
+[2026-04-29T14:28:32.211+0000] {subprocess.py:106} INFO -   "free_memory_in_mb" : 52,
+[2026-04-29T14:28:32.211+0000] {subprocess.py:106} INFO -   "cpu_cores" : 12,
+[2026-04-29T14:28:32.213+0000] {subprocess.py:106} INFO -   "spark_application_id" : "application_1777471681820_0007",
+[2026-04-29T14:28:32.214+0000] {subprocess.py:106} INFO -   "spark_language" : "Scala",
+[2026-04-29T14:28:32.215+0000] {subprocess.py:106} INFO -   "is_pyspark" : false,
+[2026-04-29T14:28:32.216+0000] {subprocess.py:106} INFO -   "spark_config" : {
+[2026-04-29T14:28:32.217+0000] {subprocess.py:106} INFO -     "spark.app.initial.jar.urls" : "N/A",
+[2026-04-29T14:28:32.218+0000] {subprocess.py:106} INFO -     "spark.hadoop.yarn.resourcemanager.hostname" : "N/A",
+[2026-04-29T14:28:32.220+0000] {subprocess.py:106} INFO -     "spark.app.startTime" : "N/A",
+[2026-04-29T14:28:32.221+0000] {subprocess.py:106} INFO -     "spark.hadoop.yarn.resourcemanager.address" : "N/A",
+[2026-04-29T14:28:32.223+0000] {subprocess.py:106} INFO -     "spark.yarn.am.memory" : "N/A",
+[2026-04-29T14:28:32.226+0000] {subprocess.py:106} INFO -     "spark.app.initial.file.urls" : "N/A",
+[2026-04-29T14:28:32.227+0000] {subprocess.py:106} INFO -     "spark.driver.appUIAddress" : "N/A",
+[2026-04-29T14:28:32.229+0000] {subprocess.py:106} INFO -     "spark.driver.extraJavaOptions" : "-Djava.net.preferIPv6Addresses=false -XX:+IgnoreUnrecognizedVMOptions --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/sun.nio.cs=ALL-UNNAMED --add-opens=java.base/sun.security.action=ALL-UNNAMED --add-opens=java.base/sun.util.calendar=ALL-UNNAMED --add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED -Djdk.reflect.useDirectMethodHandle=false",
+[2026-04-29T14:28:32.230+0000] {subprocess.py:106} INFO -     "spark.org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter.param.PROXY_HOSTS" : "N/A",
+[2026-04-29T14:28:32.231+0000] {subprocess.py:106} INFO -     "spark.files" : "N/A",
+[2026-04-29T14:28:32.232+0000] {subprocess.py:106} INFO -     "spark.app.id" : "application_1777471681820_0007",
+[2026-04-29T14:28:32.233+0000] {subprocess.py:106} INFO -     "spark.sql.warehouse.dir" : "N/A",
+[2026-04-29T14:28:32.234+0000] {subprocess.py:106} INFO -     "spark.org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter.param.PROXY_URI_BASES" : "N/A",
+[2026-04-29T14:28:32.234+0000] {subprocess.py:106} INFO -     "spark.serializer.objectStreamReset" : "N/A",
+[2026-04-29T14:28:32.235+0000] {subprocess.py:106} INFO -     "spark.driver.port" : "N/A",
+[2026-04-29T14:28:32.236+0000] {subprocess.py:106} INFO -     "spark.submit.deployMode" : "client",
+[2026-04-29T14:28:32.237+0000] {subprocess.py:106} INFO -     "spark.hadoop.fs.defaultFS" : "N/A",
+[2026-04-29T14:28:32.238+0000] {subprocess.py:106} INFO -     "spark.app.submitTime" : "N/A",
+[2026-04-29T14:28:32.239+0000] {subprocess.py:106} INFO -     "spark.ui.filters" : "N/A",
+[2026-04-29T14:28:32.241+0000] {subprocess.py:106} INFO -     "spark.executor.extraJavaOptions" : "-Djava.net.preferIPv6Addresses=false -XX:+IgnoreUnrecognizedVMOptions --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/sun.nio.cs=ALL-UNNAMED --add-opens=java.base/sun.security.action=ALL-UNNAMED --add-opens=java.base/sun.util.calendar=ALL-UNNAMED --add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED -Djdk.reflect.useDirectMethodHandle=false",
+[2026-04-29T14:28:32.242+0000] {subprocess.py:106} INFO -     "spark.executor.memory" : "512m",
+[2026-04-29T14:28:32.243+0000] {subprocess.py:106} INFO -     "spark.repl.local.jars" : "file:///root/.ivy2/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar,file:///root/.ivy2/jars/net.snowflake_snowflake-jdbc-3.16.1.jar",
+[2026-04-29T14:28:32.244+0000] {subprocess.py:106} INFO -     "spark.app.name" : "Snowflake_Load_Layer",
+[2026-04-29T14:28:32.245+0000] {subprocess.py:106} INFO -     "spark.executor.id" : "driver",
+[2026-04-29T14:28:32.247+0000] {subprocess.py:106} INFO -     "spark.hadoop.yarn.resourcemanager.scheduler.address" : "N/A",
+[2026-04-29T14:28:32.249+0000] {subprocess.py:106} INFO -     "spark.master" : "yarn",
+[2026-04-29T14:28:32.250+0000] {subprocess.py:106} INFO -     "spark.submit.pyFiles" : "N/A",
+[2026-04-29T14:28:32.251+0000] {subprocess.py:106} INFO -     "spark.driver.bindAddress" : "N/A",
+[2026-04-29T14:28:32.252+0000] {subprocess.py:106} INFO -     "spark.rdd.compress" : "N/A",
+[2026-04-29T14:28:32.252+0000] {subprocess.py:106} INFO -     "spark.driver.host" : "172.30.1.13",
+[2026-04-29T14:28:32.253+0000] {subprocess.py:106} INFO -     "spark.jars" : "file:///root/.ivy2/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar,file:///root/.ivy2/jars/net.snowflake_snowflake-jdbc-3.16.1.jar"
+[2026-04-29T14:28:32.254+0000] {subprocess.py:106} INFO -   },
+[2026-04-29T14:28:32.255+0000] {subprocess.py:106} INFO -   "libraries" : [ "py4j", "py4j.commands", "py4j.reflection" ],
+[2026-04-29T14:28:32.256+0000] {subprocess.py:106} INFO -   "dependencies" : [ "file:///root/.ivy2/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar", "file:///root/.ivy2/jars/net.snowflake_snowflake-jdbc-3.16.1.jar" ],
+[2026-04-29T14:28:32.257+0000] {subprocess.py:106} INFO -   "cluster_node_count" : 3,
+[2026-04-29T14:28:32.258+0000] {subprocess.py:106} INFO -   "spark_default_parallelism" : 2,
+[2026-04-29T14:28:32.259+0000] {subprocess.py:106} INFO -   "deploy_mode" : "client"
+[2026-04-29T14:28:32.260+0000] {subprocess.py:106} INFO - }
+[2026-04-29T14:28:32.261+0000] {subprocess.py:106} INFO - 26/04/29 14:28:32 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: alter session set timezone = 'Etc/UTC' , timestamp_ntz_output_format = 'YYYY-MM-DD HH24:MI:SS.FF3', timestamp_ltz_output_format = 'TZHTZM YYYY-MM-DD HH24:MI:SS.FF3', timestamp_tz_output_format = 'TZHTZM YYYY-MM-DD HH24:MI:SS.FF3' ;
+[2026-04-29T14:28:32.394+0000] {subprocess.py:106} INFO - 26/04/29 14:28:32 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: create  temporary stage if not exists identifier(?)
+[2026-04-29T14:28:33.497+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO CloudStorageOperations$: Spark Connector Master: Begin to process and upload data for 1 partitions: directory=ij77rnKAQh CSV true
+[2026-04-29T14:28:33.655+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO SparkContext: Starting job: collect at CloudStorageOperations.scala:813
+[2026-04-29T14:28:33.673+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO DAGScheduler: Got job 4 (collect at CloudStorageOperations.scala:813) with 1 output partitions
+[2026-04-29T14:28:33.674+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO DAGScheduler: Final stage: ResultStage 4 (collect at CloudStorageOperations.scala:813)
+[2026-04-29T14:28:33.675+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T14:28:33.676+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T14:28:33.677+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[15] at mapPartitionsWithIndex at CloudStorageOperations.scala:796), which has no missing parents
+[2026-04-29T14:28:33.691+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 32.7 KiB, free 434.1 MiB)
+[2026-04-29T14:28:33.694+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 14.1 KiB, free 434.1 MiB)
+[2026-04-29T14:28:33.697+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.30.1.13:34209 (size: 14.1 KiB, free: 434.4 MiB)
+[2026-04-29T14:28:33.698+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T14:28:33.700+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[15] at mapPartitionsWithIndex at CloudStorageOperations.scala:796) (first 15 tasks are for partitions Vector(0))
+[2026-04-29T14:28:33.701+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO YarnScheduler: Adding task set 4.0 with 1 tasks resource profile 0
+[2026-04-29T14:28:33.723+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 4) (5b0353f352af, executor 1, partition 0, RACK_LOCAL, 8842 bytes)
+[2026-04-29T14:28:33.786+0000] {subprocess.py:106} INFO - 26/04/29 14:28:33 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 5b0353f352af:45831 (size: 14.1 KiB, free: 93.3 MiB)
+[2026-04-29T14:28:37.186+0000] {subprocess.py:106} INFO - 26/04/29 14:28:37 ERROR Inbox: Ignoring error
+[2026-04-29T14:28:37.187+0000] {subprocess.py:106} INFO - java.io.NotSerializableException: org.apache.spark.storage.StorageStatus
+[2026-04-29T14:28:37.188+0000] {subprocess.py:106} INFO - Serialization stack:
+[2026-04-29T14:28:37.189+0000] {subprocess.py:106} INFO - 	- object not serializable (class: org.apache.spark.storage.StorageStatus, value: org.apache.spark.storage.StorageStatus@5e1aa8ac)
+[2026-04-29T14:28:37.190+0000] {subprocess.py:106} INFO - 	- element of array (index: 0)
+[2026-04-29T14:28:37.192+0000] {subprocess.py:106} INFO - 	- array (class [Lorg.apache.spark.storage.StorageStatus;, size 3)
+[2026-04-29T14:28:37.193+0000] {subprocess.py:106} INFO - 	at org.apache.spark.serializer.SerializationDebugger$.improveException(SerializationDebugger.scala:41)
+[2026-04-29T14:28:37.194+0000] {subprocess.py:106} INFO - 	at org.apache.spark.serializer.JavaSerializationStream.writeObject(JavaSerializer.scala:49)
+[2026-04-29T14:28:37.195+0000] {subprocess.py:106} INFO - 	at org.apache.spark.serializer.JavaSerializerInstance.serialize(JavaSerializer.scala:115)
+[2026-04-29T14:28:37.196+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.NettyRpcEnv.serialize(NettyRpcEnv.scala:286)
+[2026-04-29T14:28:37.197+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.RemoteNettyRpcCallContext.send(NettyRpcCallContext.scala:64)
+[2026-04-29T14:28:37.198+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.NettyRpcCallContext.reply(NettyRpcCallContext.scala:32)
+[2026-04-29T14:28:37.199+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint$$anonfun$receiveAndReply$1.applyOrElse(BlockManagerMasterEndpoint.scala:172)
+[2026-04-29T14:28:37.199+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:103)
+[2026-04-29T14:28:37.200+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:213)
+[2026-04-29T14:28:37.201+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:100)
+[2026-04-29T14:28:37.202+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:75)
+[2026-04-29T14:28:37.203+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:41)
+[2026-04-29T14:28:37.204+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2026-04-29T14:28:37.205+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2026-04-29T14:28:37.206+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2026-04-29T14:28:37.325+0000] {subprocess.py:106} INFO - 26/04/29 14:28:37 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 5b0353f352af:45831 (size: 36.4 KiB, free: 93.3 MiB)
+[2026-04-29T14:28:42.325+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 4) in 8609 ms on 5b0353f352af (executor 1) (1/1)
+[2026-04-29T14:28:42.327+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO YarnScheduler: Removed TaskSet 4.0, whose tasks have all completed, from pool
+[2026-04-29T14:28:42.328+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO DAGScheduler: ResultStage 4 (collect at CloudStorageOperations.scala:813) finished in 8.642 s
+[2026-04-29T14:28:42.329+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T14:28:42.331+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO YarnScheduler: Killing all running tasks in stage 4: Stage finished
+[2026-04-29T14:28:42.332+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO DAGScheduler: Job 4 finished: collect at CloudStorageOperations.scala:813, took 8.673707 s
+[2026-04-29T14:28:42.335+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO StageWriter$: writeToTableWithStagingTable: check table existence with "TITANIC_DB"."TITANIC_SCHEMA".FACT_PASSENGER for FACT_PASSENGER
+[2026-04-29T14:28:42.337+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: desc table identifier(?)
+[2026-04-29T14:28:42.459+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: create   table if not exists identifier(?) ("PASSENGERID" INTEGER ,"SURVIVED" INTEGER ,"PCLASS" INTEGER ,"FARE" DOUBLE ,"FAREPERPERSON" DOUBLE ,"FAMILYSIZE" INTEGER ,"ISALONE" INTEGER ,"AGE" DOUBLE )
+[2026-04-29T14:28:42.672+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO StageWriter$: Begin to write at 2026-04-29T14:28:42.670345137 (Coordinated Universal Time)
+[2026-04-29T14:28:42.674+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO StageWriter$: Total file count is 1, non-empty files count is 1, total file size is 26.49 KB, total row count is 891 Bytes.
+[2026-04-29T14:28:42.705+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO StageWriter$: Now executing below command to write into table:
+[2026-04-29T14:28:42.707+0000] {subprocess.py:106} INFO - copy into FACT_PASSENGER_staging_547820218 FROM @spark_connector_load_stage_rRiYr1mAbm/ij77rnKAQh/
+[2026-04-29T14:28:42.708+0000] {subprocess.py:106} INFO - FILE_FORMAT = (
+[2026-04-29T14:28:42.708+0000] {subprocess.py:106} INFO -     TYPE=CSV
+[2026-04-29T14:28:42.709+0000] {subprocess.py:106} INFO -     FIELD_DELIMITER='|'
+[2026-04-29T14:28:42.710+0000] {subprocess.py:106} INFO -     NULL_IF=()
+[2026-04-29T14:28:42.711+0000] {subprocess.py:106} INFO -     FIELD_OPTIONALLY_ENCLOSED_BY='"'
+[2026-04-29T14:28:42.712+0000] {subprocess.py:106} INFO -     TIMESTAMP_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:28:42.713+0000] {subprocess.py:106} INFO -     DATE_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:28:42.714+0000] {subprocess.py:106} INFO -     BINARY_FORMAT=BASE64
+[2026-04-29T14:28:42.715+0000] {subprocess.py:106} INFO -   )
+[2026-04-29T14:28:42.716+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:28:42.717+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: copy into FACT_PASSENGER_staging_547820218 FROM @spark_connector_load_stage_rRiYr1mAbm/ij77rnKAQh/
+[2026-04-29T14:28:42.718+0000] {subprocess.py:106} INFO - FILE_FORMAT = (
+[2026-04-29T14:28:42.719+0000] {subprocess.py:106} INFO -     TYPE=CSV
+[2026-04-29T14:28:42.720+0000] {subprocess.py:106} INFO -     FIELD_DELIMITER='|'
+[2026-04-29T14:28:42.722+0000] {subprocess.py:106} INFO -     NULL_IF=()
+[2026-04-29T14:28:42.723+0000] {subprocess.py:106} INFO -     FIELD_OPTIONALLY_ENCLOSED_BY='"'
+[2026-04-29T14:28:42.724+0000] {subprocess.py:106} INFO -     TIMESTAMP_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:28:42.725+0000] {subprocess.py:106} INFO -     DATE_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:28:42.726+0000] {subprocess.py:106} INFO -     BINARY_FORMAT=BASE64
+[2026-04-29T14:28:42.727+0000] {subprocess.py:106} INFO -   )
+[2026-04-29T14:28:42.728+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:28:42.831+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO SparkConnectorContext$: Spark connector register listener for: application_1777471681820_0007
+[2026-04-29T14:28:42.835+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO SparkConnectorContext$: Add running query for application_1777471681820_0007 session: 3770753625 queryId: 01c408e4-0000-5218-0000-e0c10001378e
+[2026-04-29T14:28:42.842+0000] {subprocess.py:106} INFO - 26/04/29 14:28:42 INFO StageWriter$: The query ID for async writing into table command is: 01c408e4-0000-5218-0000-e0c10001378e; The query ID URL is:
+[2026-04-29T14:28:42.844+0000] {subprocess.py:106} INFO - https://kv86756.eu-central-2.aws.snowflakecomputing.com/console#/monitoring/queries/detail?queryId=01c408e4-0000-5218-0000-e0c10001378e
+[2026-04-29T14:28:45.830+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO SparkConnectorContext$: Remove running query for application_1777471681820_0007 session: 3770753625 queryId: 01c408e4-0000-5218-0000-e0c10001378e
+[2026-04-29T14:28:45.831+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO StageWriter$: First COPY command is done in 3.16 seconds at 2026-04-29T14:28:45.828894932, queryID is 01c408e4-0000-5218-0000-e0c10001378e
+[2026-04-29T14:28:45.845+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO StageWriter$: Succeed to write in 3.17 seconds at 2026-04-29T14:28:45.843164772
+[2026-04-29T14:28:45.849+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: alter table identifier(?) swap with identifier(?)
+[2026-04-29T14:28:46.001+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: drop table identifier(?)
+[2026-04-29T14:28:46.149+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO StageWriter$: Spark Connector Master: Total job time is 12.81 seconds including read & upload time: 9.00 seconds and COPY time: 3.81 seconds.
+[2026-04-29T14:28:46.151+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 WARN SnowflakeConnectorUtils$: Query pushdown is not supported because you are using Spark 3.5.0 with a connector designed to support Spark 3.4. Either use the version of Spark supported by the connector or install a version of the connector that supports your version of Spark.
+[2026-04-29T14:28:46.160+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO ServerConnection$: Create ServerConnection with cached JDBC connection: 3770753625
+[2026-04-29T14:28:46.161+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: select * from FACT_PASSENGER where 1 = 0
+[2026-04-29T14:28:46.426+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 WARN SnowflakeConnectorUtils$: Query pushdown is not supported because you are using Spark 3.5.0 with a connector designed to support Spark 3.4. Either use the version of Spark supported by the connector or install a version of the connector that supports your version of Spark.
+[2026-04-29T14:28:46.464+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO FileSourceStrategy: Pushed Filters:
+[2026-04-29T14:28:46.466+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO FileSourceStrategy: Post-Scan Filters:
+[2026-04-29T14:28:46.529+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO CodeGenerator: Code generated in 46.49039 ms
+[2026-04-29T14:28:46.543+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 208.2 KiB, free 433.9 MiB)
+[2026-04-29T14:28:46.568+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 36.1 KiB, free 433.9 MiB)
+[2026-04-29T14:28:46.571+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 172.30.1.13:34209 (size: 36.1 KiB, free: 434.3 MiB)
+[2026-04-29T14:28:46.572+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO SparkContext: Created broadcast 6 from rdd at SnowflakeWriter.scala:86
+[2026-04-29T14:28:46.576+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2026-04-29T14:28:46.608+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO ServerConnection$: Create ServerConnection with cached JDBC connection: 3770753625
+[2026-04-29T14:28:46.609+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: alter session set timezone = 'Etc/UTC' , timestamp_ntz_output_format = 'YYYY-MM-DD HH24:MI:SS.FF3', timestamp_ltz_output_format = 'TZHTZM YYYY-MM-DD HH24:MI:SS.FF3', timestamp_tz_output_format = 'TZHTZM YYYY-MM-DD HH24:MI:SS.FF3' ;
+[2026-04-29T14:28:46.726+0000] {subprocess.py:106} INFO - 26/04/29 14:28:46 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: create  temporary stage if not exists identifier(?)
+[2026-04-29T14:28:48.040+0000] {subprocess.py:106} INFO - 26/04/29 14:28:48 INFO CloudStorageOperations$: Spark Connector Master: Begin to process and upload data for 1 partitions: directory=b5igXO9fnw CSV true
+[2026-04-29T14:28:45.241+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO SparkContext: Starting job: collect at CloudStorageOperations.scala:813
+[2026-04-29T14:28:45.246+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO DAGScheduler: Got job 5 (collect at CloudStorageOperations.scala:813) with 1 output partitions
+[2026-04-29T14:28:45.247+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO DAGScheduler: Final stage: ResultStage 5 (collect at CloudStorageOperations.scala:813)
+[2026-04-29T14:28:45.249+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T14:28:45.250+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T14:28:45.251+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[23] at mapPartitionsWithIndex at CloudStorageOperations.scala:796), which has no missing parents
+[2026-04-29T14:28:45.256+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 37.0 KiB, free 433.8 MiB)
+[2026-04-29T14:28:45.261+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 16.9 KiB, free 433.8 MiB)
+[2026-04-29T14:28:45.264+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 172.30.1.13:34209 (size: 16.9 KiB, free: 434.3 MiB)
+[2026-04-29T14:28:45.268+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T14:28:45.269+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[23] at mapPartitionsWithIndex at CloudStorageOperations.scala:796) (first 15 tasks are for partitions Vector(0))
+[2026-04-29T14:28:45.271+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO YarnScheduler: Adding task set 5.0 with 1 tasks resource profile 0
+[2026-04-29T14:28:45.274+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 5) (5b0353f352af, executor 1, partition 0, RACK_LOCAL, 8841 bytes)
+[2026-04-29T14:28:45.303+0000] {subprocess.py:106} INFO - 26/04/29 14:28:45 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 5b0353f352af:45831 (size: 16.9 KiB, free: 93.2 MiB)
+[2026-04-29T14:28:48.620+0000] {subprocess.py:106} INFO - 26/04/29 14:28:48 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 5b0353f352af:45831 (size: 36.1 KiB, free: 93.2 MiB)
+[2026-04-29T14:28:50.110+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 5) in 4837 ms on 5b0353f352af (executor 1) (1/1)
+[2026-04-29T14:28:50.115+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO YarnScheduler: Removed TaskSet 5.0, whose tasks have all completed, from pool
+[2026-04-29T14:28:50.116+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO DAGScheduler: ResultStage 5 (collect at CloudStorageOperations.scala:813) finished in 4.863 s
+[2026-04-29T14:28:50.120+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO DAGScheduler: Job 5 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T14:28:50.122+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO YarnScheduler: Killing all running tasks in stage 5: Stage finished
+[2026-04-29T14:28:50.123+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO DAGScheduler: Job 5 finished: collect at CloudStorageOperations.scala:813, took 4.879195 s
+[2026-04-29T14:28:50.127+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO StageWriter$: writeToTableWithStagingTable: check table existence with "TITANIC_DB"."TITANIC_SCHEMA".DIM_PASSENGER for DIM_PASSENGER
+[2026-04-29T14:28:50.128+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: desc table identifier(?)
+[2026-04-29T14:28:50.284+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: create   table if not exists identifier(?) ("PASSENGERID" INTEGER ,"NAME" STRING ,"SEX" STRING ,"AGEBUCKET" STRING )
+[2026-04-29T14:28:50.544+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO StageWriter$: Begin to write at 2026-04-29T14:28:50.541131590 (Coordinated Universal Time)
+[2026-04-29T14:28:50.545+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO StageWriter$: Total file count is 1, non-empty files count is 1, total file size is 43.20 KB, total row count is 891 Bytes.
+[2026-04-29T14:28:50.546+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO StageWriter$: Now executing below command to write into table:
+[2026-04-29T14:28:50.550+0000] {subprocess.py:106} INFO - copy into DIM_PASSENGER_staging_234814205 FROM @spark_connector_load_stage_Fj79n34GYY/b5igXO9fnw/
+[2026-04-29T14:28:50.552+0000] {subprocess.py:106} INFO - FILE_FORMAT = (
+[2026-04-29T14:28:50.553+0000] {subprocess.py:106} INFO -     TYPE=CSV
+[2026-04-29T14:28:50.554+0000] {subprocess.py:106} INFO -     FIELD_DELIMITER='|'
+[2026-04-29T14:28:50.555+0000] {subprocess.py:106} INFO -     NULL_IF=()
+[2026-04-29T14:28:50.556+0000] {subprocess.py:106} INFO -     FIELD_OPTIONALLY_ENCLOSED_BY='"'
+[2026-04-29T14:28:50.557+0000] {subprocess.py:106} INFO -     TIMESTAMP_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:28:50.558+0000] {subprocess.py:106} INFO -     DATE_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:28:50.559+0000] {subprocess.py:106} INFO -     BINARY_FORMAT=BASE64
+[2026-04-29T14:28:50.559+0000] {subprocess.py:106} INFO -   )
+[2026-04-29T14:28:50.561+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:28:50.562+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: copy into DIM_PASSENGER_staging_234814205 FROM @spark_connector_load_stage_Fj79n34GYY/b5igXO9fnw/
+[2026-04-29T14:28:50.562+0000] {subprocess.py:106} INFO - FILE_FORMAT = (
+[2026-04-29T14:28:50.565+0000] {subprocess.py:106} INFO -     TYPE=CSV
+[2026-04-29T14:28:50.566+0000] {subprocess.py:106} INFO -     FIELD_DELIMITER='|'
+[2026-04-29T14:28:50.567+0000] {subprocess.py:106} INFO -     NULL_IF=()
+[2026-04-29T14:28:50.568+0000] {subprocess.py:106} INFO -     FIELD_OPTIONALLY_ENCLOSED_BY='"'
+[2026-04-29T14:28:50.569+0000] {subprocess.py:106} INFO -     TIMESTAMP_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:28:50.570+0000] {subprocess.py:106} INFO -     DATE_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:28:50.572+0000] {subprocess.py:106} INFO -     BINARY_FORMAT=BASE64
+[2026-04-29T14:28:50.573+0000] {subprocess.py:106} INFO -   )
+[2026-04-29T14:28:50.574+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:28:50.717+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO SparkConnectorContext$: Add running query for application_1777471681820_0007 session: 3770753625 queryId: 01c408e4-0000-5218-0000-e0c1000137ba
+[2026-04-29T14:28:50.719+0000] {subprocess.py:106} INFO - 26/04/29 14:28:50 INFO StageWriter$: The query ID for async writing into table command is: 01c408e4-0000-5218-0000-e0c1000137ba; The query ID URL is:
+[2026-04-29T14:28:50.720+0000] {subprocess.py:106} INFO - https://kv86756.eu-central-2.aws.snowflakecomputing.com/console#/monitoring/queries/detail?queryId=01c408e4-0000-5218-0000-e0c1000137ba
+[2026-04-29T14:28:51.822+0000] {subprocess.py:106} INFO - 26/04/29 14:28:51 INFO SparkConnectorContext$: Remove running query for application_1777471681820_0007 session: 3770753625 queryId: 01c408e4-0000-5218-0000-e0c1000137ba
+[2026-04-29T14:28:51.823+0000] {subprocess.py:106} INFO - 26/04/29 14:28:51 INFO StageWriter$: First COPY command is done in 1.28 seconds at 2026-04-29T14:28:51.820430184, queryID is 01c408e4-0000-5218-0000-e0c1000137ba
+[2026-04-29T14:28:51.825+0000] {subprocess.py:106} INFO - 26/04/29 14:28:51 INFO StageWriter$: Succeed to write in 1.28 seconds at 2026-04-29T14:28:51.823789648
+[2026-04-29T14:28:51.829+0000] {subprocess.py:106} INFO - 26/04/29 14:28:51 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: alter table identifier(?) swap with identifier(?)
+[2026-04-29T14:28:51.997+0000] {subprocess.py:106} INFO - 26/04/29 14:28:51 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: drop table identifier(?)
+[2026-04-29T14:28:52.151+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO StageWriter$: Spark Connector Master: Total job time is 4.87 seconds including read & upload time: 2.85 seconds and COPY time: 2.02 seconds.
+[2026-04-29T14:28:52.153+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 WARN SnowflakeConnectorUtils$: Query pushdown is not supported because you are using Spark 3.5.0 with a connector designed to support Spark 3.4. Either use the version of Spark supported by the connector or install a version of the connector that supports your version of Spark.
+[2026-04-29T14:28:52.154+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO ServerConnection$: Create ServerConnection with cached JDBC connection: 3770753625
+[2026-04-29T14:28:52.155+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: select * from DIM_PASSENGER where 1 = 0
+[2026-04-29T14:28:52.465+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 WARN SnowflakeConnectorUtils$: Query pushdown is not supported because you are using Spark 3.5.0 with a connector designed to support Spark 3.4. Either use the version of Spark supported by the connector or install a version of the connector that supports your version of Spark.
+[2026-04-29T14:28:52.495+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO FileSourceStrategy: Pushed Filters:
+[2026-04-29T14:28:52.496+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO FileSourceStrategy: Post-Scan Filters:
+[2026-04-29T14:28:52.549+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO CodeGenerator: Code generated in 37.726024 ms
+[2026-04-29T14:28:52.561+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 208.0 KiB, free 433.6 MiB)
+[2026-04-29T14:28:52.581+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 36.2 KiB, free 433.6 MiB)
+[2026-04-29T14:28:52.583+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 172.30.1.13:34209 (size: 36.2 KiB, free: 434.3 MiB)
+[2026-04-29T14:28:52.585+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO SparkContext: Created broadcast 8 from rdd at SnowflakeWriter.scala:86
+[2026-04-29T14:28:52.587+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2026-04-29T14:28:52.610+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO ServerConnection$: Create ServerConnection with cached JDBC connection: 3770753625
+[2026-04-29T14:28:52.612+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: alter session set timezone = 'Etc/UTC' , timestamp_ntz_output_format = 'YYYY-MM-DD HH24:MI:SS.FF3', timestamp_ltz_output_format = 'TZHTZM YYYY-MM-DD HH24:MI:SS.FF3', timestamp_tz_output_format = 'TZHTZM YYYY-MM-DD HH24:MI:SS.FF3' ;
+[2026-04-29T14:28:52.768+0000] {subprocess.py:106} INFO - 26/04/29 14:28:52 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: create  temporary stage if not exists identifier(?)
+[2026-04-29T14:28:53.393+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO CloudStorageOperations$: Spark Connector Master: Begin to process and upload data for 1 partitions: directory=gVDWTRCVMo CSV true
+[2026-04-29T14:28:53.420+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO SparkContext: Starting job: collect at CloudStorageOperations.scala:813
+[2026-04-29T14:28:53.424+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO DAGScheduler: Got job 6 (collect at CloudStorageOperations.scala:813) with 1 output partitions
+[2026-04-29T14:28:53.426+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO DAGScheduler: Final stage: ResultStage 6 (collect at CloudStorageOperations.scala:813)
+[2026-04-29T14:28:53.427+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T14:28:53.428+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T14:28:53.429+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[31] at mapPartitionsWithIndex at CloudStorageOperations.scala:796), which has no missing parents
+[2026-04-29T14:28:53.436+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 35.5 KiB, free 433.6 MiB)
+[2026-04-29T14:28:53.441+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 16.6 KiB, free 433.5 MiB)
+[2026-04-29T14:28:53.444+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 172.30.1.13:34209 (size: 16.6 KiB, free: 434.2 MiB)
+[2026-04-29T14:28:53.448+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T14:28:53.449+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[31] at mapPartitionsWithIndex at CloudStorageOperations.scala:796) (first 15 tasks are for partitions Vector(0))
+[2026-04-29T14:28:53.450+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO YarnScheduler: Adding task set 6.0 with 1 tasks resource profile 0
+[2026-04-29T14:28:53.453+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 6) (1175ad6b07ce, executor 2, partition 0, RACK_LOCAL, 8840 bytes)
+[2026-04-29T14:28:53.965+0000] {subprocess.py:106} INFO - 26/04/29 14:28:53 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 1175ad6b07ce:41685 (size: 16.6 KiB, free: 93.3 MiB)
+[2026-04-29T14:29:01.323+0000] {subprocess.py:106} INFO - 26/04/29 14:29:01 ERROR Inbox: Ignoring error
+[2026-04-29T14:29:01.325+0000] {subprocess.py:106} INFO - java.io.NotSerializableException: org.apache.spark.storage.StorageStatus
+[2026-04-29T14:29:01.326+0000] {subprocess.py:106} INFO - Serialization stack:
+[2026-04-29T14:29:01.327+0000] {subprocess.py:106} INFO - 	- object not serializable (class: org.apache.spark.storage.StorageStatus, value: org.apache.spark.storage.StorageStatus@4f005003)
+[2026-04-29T14:29:01.329+0000] {subprocess.py:106} INFO - 	- element of array (index: 0)
+[2026-04-29T14:29:01.329+0000] {subprocess.py:106} INFO - 	- array (class [Lorg.apache.spark.storage.StorageStatus;, size 3)
+[2026-04-29T14:29:01.330+0000] {subprocess.py:106} INFO - 	at org.apache.spark.serializer.SerializationDebugger$.improveException(SerializationDebugger.scala:41)
+[2026-04-29T14:29:01.332+0000] {subprocess.py:106} INFO - 	at org.apache.spark.serializer.JavaSerializationStream.writeObject(JavaSerializer.scala:49)
+[2026-04-29T14:29:01.333+0000] {subprocess.py:106} INFO - 	at org.apache.spark.serializer.JavaSerializerInstance.serialize(JavaSerializer.scala:115)
+[2026-04-29T14:29:01.334+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.NettyRpcEnv.serialize(NettyRpcEnv.scala:286)
+[2026-04-29T14:29:01.335+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.RemoteNettyRpcCallContext.send(NettyRpcCallContext.scala:64)
+[2026-04-29T14:29:01.336+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.NettyRpcCallContext.reply(NettyRpcCallContext.scala:32)
+[2026-04-29T14:29:01.337+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint$$anonfun$receiveAndReply$1.applyOrElse(BlockManagerMasterEndpoint.scala:172)
+[2026-04-29T14:29:01.338+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:103)
+[2026-04-29T14:29:01.339+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:213)
+[2026-04-29T14:29:01.340+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:100)
+[2026-04-29T14:29:01.341+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:75)
+[2026-04-29T14:29:01.342+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:41)
+[2026-04-29T14:29:01.343+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2026-04-29T14:29:01.344+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2026-04-29T14:29:01.344+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2026-04-29T14:29:01.474+0000] {subprocess.py:106} INFO - 26/04/29 14:29:01 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 1175ad6b07ce:41685 (size: 36.2 KiB, free: 93.2 MiB)
+[2026-04-29T14:29:10.841+0000] {subprocess.py:106} INFO - 26/04/29 14:29:10 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 6) in 17387 ms on 1175ad6b07ce (executor 2) (1/1)
+[2026-04-29T14:29:10.878+0000] {subprocess.py:106} INFO - 26/04/29 14:29:10 INFO YarnScheduler: Removed TaskSet 6.0, whose tasks have all completed, from pool
+[2026-04-29T14:29:10.880+0000] {subprocess.py:106} INFO - 26/04/29 14:29:10 INFO DAGScheduler: ResultStage 6 (collect at CloudStorageOperations.scala:813) finished in 17.412 s
+[2026-04-29T14:29:10.882+0000] {subprocess.py:106} INFO - 26/04/29 14:29:10 INFO DAGScheduler: Job 6 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-04-29T14:29:10.884+0000] {subprocess.py:106} INFO - 26/04/29 14:29:10 INFO YarnScheduler: Killing all running tasks in stage 6: Stage finished
+[2026-04-29T14:29:10.885+0000] {subprocess.py:106} INFO - 26/04/29 14:29:10 INFO DAGScheduler: Job 6 finished: collect at CloudStorageOperations.scala:813, took 17.424033 s
+[2026-04-29T14:29:10.886+0000] {subprocess.py:106} INFO - 26/04/29 14:29:10 INFO StageWriter$: writeToTableWithStagingTable: check table existence with "TITANIC_DB"."TITANIC_SCHEMA".DIM_EMBARKED for DIM_EMBARKED
+[2026-04-29T14:29:10.887+0000] {subprocess.py:106} INFO - 26/04/29 14:29:10 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: desc table identifier(?)
+[2026-04-29T14:29:10.978+0000] {subprocess.py:106} INFO - 26/04/29 14:29:10 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: create   table if not exists identifier(?) ("PASSENGERID" INTEGER ,"EMBARKED" STRING )
+[2026-04-29T14:29:11.197+0000] {subprocess.py:106} INFO - 26/04/29 14:29:11 INFO StageWriter$: Begin to write at 2026-04-29T14:29:11.195273601 (Coordinated Universal Time)
+[2026-04-29T14:29:11.199+0000] {subprocess.py:106} INFO - 26/04/29 14:29:11 INFO StageWriter$: Total file count is 1, non-empty files count is 1, total file size is 6.86 KB, total row count is 891 Bytes.
+[2026-04-29T14:29:11.200+0000] {subprocess.py:106} INFO - 26/04/29 14:29:11 INFO StageWriter$: Now executing below command to write into table:
+[2026-04-29T14:29:11.201+0000] {subprocess.py:106} INFO - copy into DIM_EMBARKED_staging_2088744614 FROM @spark_connector_load_stage_SP3b1sBrpz/gVDWTRCVMo/
+[2026-04-29T14:29:11.201+0000] {subprocess.py:106} INFO - FILE_FORMAT = (
+[2026-04-29T14:29:11.202+0000] {subprocess.py:106} INFO -     TYPE=CSV
+[2026-04-29T14:29:11.203+0000] {subprocess.py:106} INFO -     FIELD_DELIMITER='|'
+[2026-04-29T14:29:11.204+0000] {subprocess.py:106} INFO -     NULL_IF=()
+[2026-04-29T14:29:11.205+0000] {subprocess.py:106} INFO -     FIELD_OPTIONALLY_ENCLOSED_BY='"'
+[2026-04-29T14:29:11.206+0000] {subprocess.py:106} INFO -     TIMESTAMP_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:29:11.207+0000] {subprocess.py:106} INFO -     DATE_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:29:11.209+0000] {subprocess.py:106} INFO -     BINARY_FORMAT=BASE64
+[2026-04-29T14:29:11.210+0000] {subprocess.py:106} INFO -   )
+[2026-04-29T14:29:11.211+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:29:11.212+0000] {subprocess.py:106} INFO - 26/04/29 14:29:11 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: copy into DIM_EMBARKED_staging_2088744614 FROM @spark_connector_load_stage_SP3b1sBrpz/gVDWTRCVMo/
+[2026-04-29T14:29:11.213+0000] {subprocess.py:106} INFO - FILE_FORMAT = (
+[2026-04-29T14:29:11.214+0000] {subprocess.py:106} INFO -     TYPE=CSV
+[2026-04-29T14:29:11.215+0000] {subprocess.py:106} INFO -     FIELD_DELIMITER='|'
+[2026-04-29T14:29:11.216+0000] {subprocess.py:106} INFO -     NULL_IF=()
+[2026-04-29T14:29:11.217+0000] {subprocess.py:106} INFO -     FIELD_OPTIONALLY_ENCLOSED_BY='"'
+[2026-04-29T14:29:11.218+0000] {subprocess.py:106} INFO -     TIMESTAMP_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:29:11.219+0000] {subprocess.py:106} INFO -     DATE_FORMAT='TZHTZM YYYY-MM-DD HH24:MI:SS.FF9'
+[2026-04-29T14:29:11.220+0000] {subprocess.py:106} INFO -     BINARY_FORMAT=BASE64
+[2026-04-29T14:29:11.221+0000] {subprocess.py:106} INFO -   )
+[2026-04-29T14:29:11.223+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:29:11.340+0000] {subprocess.py:106} INFO - 26/04/29 14:29:11 INFO SparkConnectorContext$: Add running query for application_1777471681820_0007 session: 3770753625 queryId: 01c408e5-0000-5218-0000-e0c1000137e6
+[2026-04-29T14:29:11.342+0000] {subprocess.py:106} INFO - 26/04/29 14:29:11 INFO StageWriter$: The query ID for async writing into table command is: 01c408e5-0000-5218-0000-e0c1000137e6; The query ID URL is:
+[2026-04-29T14:29:11.345+0000] {subprocess.py:106} INFO - https://kv86756.eu-central-2.aws.snowflakecomputing.com/console#/monitoring/queries/detail?queryId=01c408e5-0000-5218-0000-e0c1000137e6
+[2026-04-29T14:29:12.350+0000] {subprocess.py:106} INFO - 26/04/29 14:29:12 INFO SparkConnectorContext$: Remove running query for application_1777471681820_0007 session: 3770753625 queryId: 01c408e5-0000-5218-0000-e0c1000137e6
+[2026-04-29T14:29:12.352+0000] {subprocess.py:106} INFO - 26/04/29 14:29:12 INFO StageWriter$: First COPY command is done in 1.15 seconds at 2026-04-29T14:29:12.347864524, queryID is 01c408e5-0000-5218-0000-e0c1000137e6
+[2026-04-29T14:29:12.353+0000] {subprocess.py:106} INFO - 26/04/29 14:29:12 INFO StageWriter$: Succeed to write in 1.16 seconds at 2026-04-29T14:29:12.350323656
+[2026-04-29T14:29:12.359+0000] {subprocess.py:106} INFO - 26/04/29 14:29:12 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: alter table identifier(?) swap with identifier(?)
+[2026-04-29T14:29:12.506+0000] {subprocess.py:106} INFO - 26/04/29 14:29:12 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: drop table identifier(?)
+[2026-04-29T14:29:12.727+0000] {subprocess.py:106} INFO - 26/04/29 14:29:12 INFO StageWriter$: Spark Connector Master: Total job time is 19.53 seconds including read & upload time: 17.66 seconds and COPY time: 1.88 seconds.
+[2026-04-29T14:29:12.729+0000] {subprocess.py:106} INFO - 26/04/29 14:29:12 WARN SnowflakeConnectorUtils$: Query pushdown is not supported because you are using Spark 3.5.0 with a connector designed to support Spark 3.4. Either use the version of Spark supported by the connector or install a version of the connector that supports your version of Spark.
+[2026-04-29T14:29:12.730+0000] {subprocess.py:106} INFO - 26/04/29 14:29:12 INFO ServerConnection$: Create ServerConnection with cached JDBC connection: 3770753625
+[2026-04-29T14:29:12.732+0000] {subprocess.py:106} INFO - 26/04/29 14:29:12 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: select * from DIM_EMBARKED where 1 = 0
+[2026-04-29T14:29:13.268+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 WARN SnowflakeConnectorUtils$: Query pushdown is not supported because you are using Spark 3.5.0 with a connector designed to support Spark 3.4. Either use the version of Spark supported by the connector or install a version of the connector that supports your version of Spark.
+[2026-04-29T14:29:13.269+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO FileSourceStrategy: Pushed Filters:
+[2026-04-29T14:29:13.270+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO FileSourceStrategy: Post-Scan Filters:
+[2026-04-29T14:29:13.272+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO CodeGenerator: Code generated in 40.468522 ms
+[2026-04-29T14:29:13.273+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 208.0 KiB, free 433.3 MiB)
+[2026-04-29T14:29:13.274+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 36.1 KiB, free 433.3 MiB)
+[2026-04-29T14:29:13.276+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on 172.30.1.13:34209 (size: 36.1 KiB, free: 434.2 MiB)
+[2026-04-29T14:29:13.312+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO SparkContext: Created broadcast 10 from rdd at SnowflakeWriter.scala:86
+[2026-04-29T14:29:13.314+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2026-04-29T14:29:13.316+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO ServerConnection$: Create ServerConnection with cached JDBC connection: 3770753625
+[2026-04-29T14:29:13.317+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: alter session set timezone = 'Etc/UTC' , timestamp_ntz_output_format = 'YYYY-MM-DD HH24:MI:SS.FF3', timestamp_ltz_output_format = 'TZHTZM YYYY-MM-DD HH24:MI:SS.FF3', timestamp_tz_output_format = 'TZHTZM YYYY-MM-DD HH24:MI:SS.FF3' ;
+[2026-04-29T14:29:13.550+0000] {subprocess.py:106} INFO - 26/04/29 14:29:13 INFO SnowflakeSQLStatement: Spark Connector Master: execute query with bind variable: create  temporary stage if not exists identifier(?)
+[2026-04-29T14:29:14.724+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO CloudStorageOperations$: Spark Connector Master: Begin to process and upload data for 1 partitions: directory=dhVPr6acOY CSV true
+[2026-04-29T14:29:14.751+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO SparkContext: Starting job: collect at CloudStorageOperations.scala:813
+[2026-04-29T14:29:14.752+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO DAGScheduler: Got job 7 (collect at CloudStorageOperations.scala:813) with 1 output partitions
+[2026-04-29T14:29:14.754+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO DAGScheduler: Final stage: ResultStage 7 (collect at CloudStorageOperations.scala:813)
+[2026-04-29T14:29:14.756+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO DAGScheduler: Parents of final stage: List()
+[2026-04-29T14:29:14.757+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO DAGScheduler: Missing parents: List()
+[2026-04-29T14:29:14.758+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO DAGScheduler: Submitting ResultStage 7 (MapPartitionsRDD[39] at mapPartitionsWithIndex at CloudStorageOperations.scala:796), which has no missing parents
+[2026-04-29T14:29:14.759+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 27.9 KiB, free 433.3 MiB)
+[2026-04-29T14:29:14.761+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 13.0 KiB, free 433.3 MiB)
+[2026-04-29T14:29:14.762+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on 172.30.1.13:34209 (size: 13.0 KiB, free: 434.2 MiB)
+[2026-04-29T14:29:14.762+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1580
+[2026-04-29T14:29:14.764+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[39] at mapPartitionsWithIndex at CloudStorageOperations.scala:796) (first 15 tasks are for partitions Vector(0))
+[2026-04-29T14:29:14.766+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO YarnScheduler: Adding task set 7.0 with 1 tasks resource profile 0
+[2026-04-29T14:29:14.885+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 7) (5b0353f352af, executor 1, partition 0, RACK_LOCAL, 8837 bytes)
+[2026-04-29T14:29:15.202+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on 5b0353f352af:45831 (size: 13.0 KiB, free: 93.2 MiB)
+[2026-04-29T14:29:15.208+0000] {subprocess.py:106} INFO - 26/04/29 14:29:14 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on 5b0353f352af:45831 (size: 36.1 KiB, free: 93.2 MiB)
+[2026-04-29T14:29:30.065+0000] {job.py:239} ERROR - Job heartbeat failed with error
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres_***" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 233, in heartbeat
+    heartbeat_callback(session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/local_task_job_runner.py", line 284, in heartbeat_callback
+    self.task_instance.refresh_from_db()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2359, in refresh_from_db
+    _refresh_from_db(task_instance=self, session=session, lock_for_update=lock_for_update)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 872, in _refresh_from_db
+    ti = TaskInstance.get_task_instance(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2345, in get_task_instance
+    return query.one_or_none()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2850, in one_or_none
+    return self._iter().one_or_none()
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2916, in _iter
+    result = self.session.execute(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres_***" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-04-29T14:29:30.332+0000] {job.py:245} ERROR - Job heartbeat failed with error. Scheduler may go into unhealthy state
+[2026-04-29T14:30:03.553+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-29T14:30:10.666+0000] {job.py:229} INFO - Heartbeat recovered after 50.72 seconds
+[2026-04-29T14:30:28.934+0000] {job.py:239} ERROR - Job heartbeat failed with error
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres_***" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 233, in heartbeat
+    heartbeat_callback(session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/local_task_job_runner.py", line 284, in heartbeat_callback
+    self.task_instance.refresh_from_db()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2359, in refresh_from_db
+    _refresh_from_db(task_instance=self, session=session, lock_for_update=lock_for_update)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 872, in _refresh_from_db
+    ti = TaskInstance.get_task_instance(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2345, in get_task_instance
+    return query.one_or_none()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2850, in one_or_none
+    return self._iter().one_or_none()
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2916, in _iter
+    result = self.session.execute(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres_***" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-04-29T14:30:29.057+0000] {job.py:245} ERROR - Job heartbeat failed with error. Scheduler may go into unhealthy state
+[2026-04-29T14:31:02.528+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-29T14:31:36.618+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-29T14:32:10.245+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-29T14:32:43.918+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-29T14:33:15.165+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-29T14:33:49.460+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-29T14:34:23.004+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-29T14:35:12.962+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state

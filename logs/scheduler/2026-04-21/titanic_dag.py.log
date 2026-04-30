@@ -1,0 +1,210 @@
+[2026-04-21T19:16:30.158+0000] {processor.py:186} INFO - Started process (PID=211) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:16:30.160+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:16:30.165+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:16:30.164+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:16:30.211+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:16:30.277+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:16:30.277+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:16:30.325+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:16:30.325+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:16:30.366+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.221 seconds
+[2026-04-21T19:17:00.532+0000] {processor.py:186} INFO - Started process (PID=222) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:17:00.535+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:17:00.542+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:17:00.542+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:17:00.598+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:17:00.675+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:17:00.674+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:17:00.710+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:17:00.709+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:17:00.751+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.234 seconds
+[2026-04-21T19:17:30.879+0000] {processor.py:186} INFO - Started process (PID=233) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:17:30.882+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:17:30.888+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:17:30.888+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:17:30.934+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:17:31.011+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:17:31.011+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:17:31.046+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:17:31.045+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:17:31.098+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.240 seconds
+[2026-04-21T19:18:01.227+0000] {processor.py:186} INFO - Started process (PID=244) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:18:01.230+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:18:01.236+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:18:01.235+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:18:01.285+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:18:01.351+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:18:01.351+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:18:01.385+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:18:01.384+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:18:01.423+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.212 seconds
+[2026-04-21T19:18:31.951+0000] {processor.py:186} INFO - Started process (PID=255) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:18:31.954+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:18:31.960+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:18:31.959+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:18:32.011+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:18:32.109+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:18:32.109+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:18:32.147+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:18:32.146+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:18:32.192+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.262 seconds
+[2026-04-21T19:19:02.954+0000] {processor.py:186} INFO - Started process (PID=266) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:19:02.956+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:19:02.964+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:19:02.962+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:19:03.013+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:19:03.089+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:19:03.088+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:19:03.127+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:19:03.127+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:19:03.179+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.239 seconds
+[2026-04-21T19:19:34.000+0000] {processor.py:186} INFO - Started process (PID=277) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:19:34.003+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:19:34.009+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:19:34.008+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:19:34.061+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:19:34.133+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:19:34.132+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:19:34.176+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:19:34.175+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:19:34.231+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.244 seconds
+[2026-04-21T19:20:04.837+0000] {processor.py:186} INFO - Started process (PID=288) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:20:04.840+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:20:04.845+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:20:04.845+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:20:04.901+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:20:04.972+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:20:04.972+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:20:05.012+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:20:05.012+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:20:05.055+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.230 seconds
+[2026-04-21T19:20:35.319+0000] {processor.py:186} INFO - Started process (PID=299) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:20:35.321+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:20:35.327+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:20:35.327+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:20:35.380+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:20:35.455+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:20:35.455+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:20:35.492+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:20:35.492+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:20:35.535+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.229 seconds
+[2026-04-21T19:21:06.361+0000] {processor.py:186} INFO - Started process (PID=311) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:21:06.364+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:21:06.369+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:21:06.368+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:21:06.419+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:21:06.478+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:21:06.477+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:21:06.509+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:21:06.508+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:21:06.549+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.200 seconds
+[2026-04-21T19:21:36.829+0000] {processor.py:186} INFO - Started process (PID=342) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:21:36.832+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:21:36.837+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:21:36.837+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:21:36.887+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:21:36.944+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:21:36.943+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:21:36.979+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:21:36.978+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:21:37.031+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.213 seconds
+[2026-04-21T19:22:07.194+0000] {processor.py:186} INFO - Started process (PID=363) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:22:07.196+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:22:07.201+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:22:07.200+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:22:07.247+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:22:07.302+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:22:07.301+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:22:07.332+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:22:07.332+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:22:07.376+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.193 seconds
+[2026-04-21T19:23:05.988+0000] {processor.py:186} INFO - Started process (PID=384) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:23:06.014+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:23:06.021+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:23:06.021+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:23:06.207+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:23:06.234+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:23:06.233+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:23:06.255+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:23:06.254+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:23:06.349+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.382 seconds
+[2026-04-21T19:23:36.588+0000] {processor.py:186} INFO - Started process (PID=405) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:23:36.589+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:23:36.592+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:23:36.591+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:23:36.609+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:23:36.633+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:23:36.633+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:23:36.646+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:23:36.646+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:23:36.661+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.078 seconds
+[2026-04-21T19:24:06.858+0000] {processor.py:186} INFO - Started process (PID=426) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:24:06.859+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:24:06.861+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:24:06.861+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:24:06.877+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:24:06.902+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:24:06.901+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:24:06.914+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:24:06.914+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:24:06.930+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.078 seconds
+[2026-04-21T19:24:37.187+0000] {processor.py:186} INFO - Started process (PID=445) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:24:37.187+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:24:37.190+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:24:37.190+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:24:37.215+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:24:37.258+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:24:37.257+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:24:37.276+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:24:37.276+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:24:37.293+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.112 seconds
+[2026-04-21T19:25:07.534+0000] {processor.py:186} INFO - Started process (PID=516) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:25:07.535+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:25:07.538+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:25:07.537+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:25:07.555+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:25:07.586+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:25:07.586+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:25:07.598+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:25:07.598+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:25:07.622+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.094 seconds
+[2026-04-21T19:25:37.836+0000] {processor.py:186} INFO - Started process (PID=537) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:25:37.837+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:25:37.840+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:25:37.839+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:25:37.855+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:25:37.881+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:25:37.880+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:25:37.895+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:25:37.894+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:25:37.919+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.088 seconds
+[2026-04-21T19:26:08.613+0000] {processor.py:186} INFO - Started process (PID=558) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:26:08.614+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:26:08.616+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:26:08.615+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:26:08.630+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:26:08.658+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:26:08.658+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:26:08.672+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:26:08.672+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:26:08.690+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.082 seconds
+[2026-04-21T19:26:39.347+0000] {processor.py:186} INFO - Started process (PID=597) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:26:39.348+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:26:39.350+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:26:39.350+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:26:39.365+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:26:39.392+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:26:39.391+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:26:39.407+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:26:39.407+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:26:39.442+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.100 seconds
+[2026-04-21T19:27:09.647+0000] {processor.py:186} INFO - Started process (PID=680) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:27:09.648+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:27:09.650+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:27:09.650+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:27:09.666+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:27:09.691+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:27:09.690+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:27:09.703+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:27:09.703+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:27:09.718+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.076 seconds
+[2026-04-21T19:27:39.833+0000] {processor.py:186} INFO - Started process (PID=733) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:27:39.834+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:27:39.837+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:27:39.837+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:27:39.854+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:27:39.883+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:27:39.883+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:27:39.899+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:27:39.899+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:27:39.918+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.091 seconds
+[2026-04-21T19:28:10.135+0000] {processor.py:186} INFO - Started process (PID=749) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:28:10.136+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:28:10.138+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:28:10.138+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:28:10.157+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:28:10.186+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:28:10.186+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:28:10.202+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:28:10.201+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:28:10.221+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.092 seconds
+[2026-04-21T19:28:40.755+0000] {processor.py:186} INFO - Started process (PID=760) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:28:40.757+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:28:40.758+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:28:40.758+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:28:40.773+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:28:40.798+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:28:40.798+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:28:40.815+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:28:40.814+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:28:40.831+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.082 seconds
+[2026-04-21T19:29:11.191+0000] {processor.py:186} INFO - Started process (PID=771) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:29:11.192+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:29:11.193+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:29:11.193+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:29:11.208+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:29:11.232+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:29:11.232+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:29:11.246+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:29:11.246+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:29:11.263+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.077 seconds
+[2026-04-21T19:29:41.321+0000] {processor.py:186} INFO - Started process (PID=782) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:29:41.322+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:29:41.323+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:29:41.322+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:29:41.341+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:29:41.367+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:29:41.367+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:29:41.383+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:29:41.383+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:29:41.409+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.094 seconds
+[2026-04-21T19:30:12.031+0000] {processor.py:186} INFO - Started process (PID=793) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:30:12.032+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:30:12.033+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:30:12.033+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:30:12.048+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:30:12.073+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:30:12.073+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:30:12.089+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:30:12.089+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:30:12.107+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.081 seconds
+[2026-04-21T19:30:42.542+0000] {processor.py:186} INFO - Started process (PID=804) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:30:42.542+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:30:42.543+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:30:42.543+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:30:42.559+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:30:42.587+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:30:42.586+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:30:42.602+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:30:42.602+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:30:42.628+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.092 seconds
+[2026-04-21T19:31:13.510+0000] {processor.py:186} INFO - Started process (PID=815) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:31:13.511+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:31:13.512+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:31:13.511+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:31:13.528+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:31:13.556+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:31:13.555+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:31:13.571+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:31:13.571+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:31:13.594+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.090 seconds
+[2026-04-21T19:31:43.825+0000] {processor.py:186} INFO - Started process (PID=826) to work on /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:31:43.826+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/titanic_dag.py for tasks to queue
+[2026-04-21T19:31:43.827+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:31:43.827+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:31:43.843+0000] {processor.py:925} INFO - DAG(s) 'titanic_dag' retrieved from /opt/airflow/dags/titanic_dag.py
+[2026-04-21T19:31:43.870+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:31:43.870+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-04-21T19:31:43.885+0000] {logging_mixin.py:190} INFO - [2026-04-21T19:31:43.884+0000] {dag.py:4180} INFO - Setting next_dagrun for titanic_dag to None, run_after=None
+[2026-04-21T19:31:43.900+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/titanic_dag.py took 0.081 seconds

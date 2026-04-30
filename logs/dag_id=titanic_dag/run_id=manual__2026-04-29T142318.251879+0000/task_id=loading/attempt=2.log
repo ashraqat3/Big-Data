@@ -1,0 +1,447 @@
+[2026-04-29T14:37:34.017+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-29T14:37:34.053+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: titanic_dag.loading manual__2026-04-29T14:23:18.251879+00:00 [queued]>
+[2026-04-29T14:37:34.073+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: titanic_dag.loading manual__2026-04-29T14:23:18.251879+00:00 [queued]>
+[2026-04-29T14:37:34.079+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 1
+[2026-04-29T14:37:34.111+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): loading> on 2026-04-29 14:23:18.251879+00:00
+[2026-04-29T14:37:34.124+0000] {standard_task_runner.py:72} INFO - Started process 244 to run task
+[2026-04-29T14:37:34.131+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'titanic_dag', 'loading', 'manual__2026-04-29T14:23:18.251879+00:00', '--job-id', '197', '--raw', '--subdir', 'DAGS_FOLDER/titanic_dag.py', '--cfg-path', '/tmp/tmp3yu__5ol']
+[2026-04-29T14:37:34.136+0000] {standard_task_runner.py:105} INFO - Job 197: Subtask loading
+[2026-04-29T14:37:34.273+0000] {task_command.py:467} INFO - Running <TaskInstance: titanic_dag.loading manual__2026-04-29T14:23:18.251879+00:00 [running]> on host 9fbda7c5f6bc
+[2026-04-29T14:37:34.464+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='titanic_dag' AIRFLOW_CTX_TASK_ID='loading' AIRFLOW_CTX_EXECUTION_DATE='2026-04-29T14:23:18.251879+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-29T14:23:18.251879+00:00'
+[2026-04-29T14:37:34.467+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-29T14:37:34.521+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-04-29T14:37:34.524+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        docker exec spark-jupyter spark-submit         --packages net.snowflake:spark-snowflake_2.12:2.16.0-spark_3.4,net.snowflake:snowflake-jdbc:3.13.22         /home/jovyan/work/Scripts/loading.py\n        ']
+[2026-04-29T14:37:34.551+0000] {subprocess.py:99} INFO - Output:
+[2026-04-29T14:37:40.352+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/usr/local/spark-3.5.0-bin-hadoop3/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-04-29T14:37:38.304+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /root/.ivy2/cache
+[2026-04-29T14:37:38.305+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /root/.ivy2/jars
+[2026-04-29T14:37:38.318+0000] {subprocess.py:106} INFO - net.snowflake#spark-snowflake_2.12 added as a dependency
+[2026-04-29T14:37:38.320+0000] {subprocess.py:106} INFO - net.snowflake#snowflake-jdbc added as a dependency
+[2026-04-29T14:37:38.323+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-2d85a46b-1b12-49e7-82af-bf655d6c9e40;1.0
+[2026-04-29T14:37:38.329+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-04-29T14:37:38.733+0000] {subprocess.py:106} INFO - 	found net.snowflake#spark-snowflake_2.12;2.16.0-spark_3.4 in central
+[2026-04-29T14:37:38.826+0000] {subprocess.py:106} INFO - 	found net.snowflake#snowflake-jdbc;3.16.1 in central
+[2026-04-29T14:37:38.877+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 538ms :: artifacts dl 16ms
+[2026-04-29T14:37:38.880+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2026-04-29T14:37:38.882+0000] {subprocess.py:106} INFO - 	net.snowflake#snowflake-jdbc;3.16.1 from central in [default]
+[2026-04-29T14:37:38.883+0000] {subprocess.py:106} INFO - 	net.snowflake#spark-snowflake_2.12;2.16.0-spark_3.4 from central in [default]
+[2026-04-29T14:37:38.884+0000] {subprocess.py:106} INFO - 	:: evicted modules:
+[2026-04-29T14:37:38.886+0000] {subprocess.py:106} INFO - 	net.snowflake#snowflake-jdbc;3.13.22 by [net.snowflake#snowflake-jdbc;3.16.1] in [default]
+[2026-04-29T14:37:38.887+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-04-29T14:37:38.888+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-04-29T14:37:38.890+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-04-29T14:37:38.891+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-04-29T14:37:38.892+0000] {subprocess.py:106} INFO - 	|      default     |   3   |   0   |   0   |   1   ||   2   |   0   |
+[2026-04-29T14:37:38.893+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-04-29T14:37:38.894+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-2d85a46b-1b12-49e7-82af-bf655d6c9e40
+[2026-04-29T14:37:38.895+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-04-29T14:37:38.905+0000] {subprocess.py:106} INFO - 	0 artifacts copied, 2 already retrieved (0kB/14ms)
+[2026-04-29T14:37:39.434+0000] {subprocess.py:106} INFO - 26/04/29 14:37:39 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-04-29T14:37:42.169+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SparkContext: Running Spark version 3.5.0
+[2026-04-29T14:37:42.171+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SparkContext: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+[2026-04-29T14:37:42.172+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SparkContext: Java version 17.0.8.1
+[2026-04-29T14:37:42.223+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO ResourceUtils: ==============================================================
+[2026-04-29T14:37:42.224+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2026-04-29T14:37:42.225+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO ResourceUtils: ==============================================================
+[2026-04-29T14:37:42.227+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SparkContext: Submitted application: Snowflake_Load_Layer
+[2026-04-29T14:37:42.268+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 512, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2026-04-29T14:37:42.293+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2026-04-29T14:37:42.298+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2026-04-29T14:37:42.409+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SecurityManager: Changing view acls to: root
+[2026-04-29T14:37:42.410+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SecurityManager: Changing modify acls to: root
+[2026-04-29T14:37:42.413+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SecurityManager: Changing view acls groups to:
+[2026-04-29T14:37:42.414+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SecurityManager: Changing modify acls groups to:
+[2026-04-29T14:37:42.415+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+[2026-04-29T14:37:42.899+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO Utils: Successfully started service 'sparkDriver' on port 43767.
+[2026-04-29T14:37:42.950+0000] {subprocess.py:106} INFO - 26/04/29 14:37:42 INFO SparkEnv: Registering MapOutputTracker
+[2026-04-29T14:37:43.019+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO SparkEnv: Registering BlockManagerMaster
+[2026-04-29T14:37:43.064+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2026-04-29T14:37:43.066+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2026-04-29T14:37:43.113+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2026-04-29T14:37:43.153+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-9938d99d-86b1-4098-bef6-8c370ed09422
+[2026-04-29T14:37:43.184+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2026-04-29T14:37:43.251+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO SparkEnv: Registering OutputCommitCoordinator
+[2026-04-29T14:37:43.532+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2026-04-29T14:37:43.622+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2026-04-29T14:37:43.636+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+[2026-04-29T14:37:43.706+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO SparkContext: Added JAR file:///root/.ivy2/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar at spark://172.30.1.13:43767/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar with timestamp 1777473462152
+[2026-04-29T14:37:43.707+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO SparkContext: Added JAR file:///root/.ivy2/jars/net.snowflake_snowflake-jdbc-3.16.1.jar at spark://172.30.1.13:43767/jars/net.snowflake_snowflake-jdbc-3.16.1.jar with timestamp 1777473462152
+[2026-04-29T14:37:43.715+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO SparkContext: Added file file:///root/.ivy2/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar at spark://172.30.1.13:43767/files/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar with timestamp 1777473462152
+[2026-04-29T14:37:43.717+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO Utils: Copying /root/.ivy2/jars/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar to /tmp/spark-ab4bd03e-ae60-4c68-9917-f1218e1c0070/userFiles-4cd24dec-5ee2-4b08-8315-acf4a11075fa/net.snowflake_spark-snowflake_2.12-2.16.0-spark_3.4.jar
+[2026-04-29T14:37:43.749+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO SparkContext: Added file file:///root/.ivy2/jars/net.snowflake_snowflake-jdbc-3.16.1.jar at spark://172.30.1.13:43767/files/net.snowflake_snowflake-jdbc-3.16.1.jar with timestamp 1777473462152
+[2026-04-29T14:37:43.750+0000] {subprocess.py:106} INFO - 26/04/29 14:37:43 INFO Utils: Copying /root/.ivy2/jars/net.snowflake_snowflake-jdbc-3.16.1.jar to /tmp/spark-ab4bd03e-ae60-4c68-9917-f1218e1c0070/userFiles-4cd24dec-5ee2-4b08-8315-acf4a11075fa/net.snowflake_snowflake-jdbc-3.16.1.jar
+[2026-04-29T14:37:44.508+0000] {subprocess.py:106} INFO - 26/04/29 14:37:44 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at resourcemanager/172.30.1.24:8032
+[2026-04-29T14:37:45.485+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO Configuration: resource-types.xml not found
+[2026-04-29T14:37:45.486+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+[2026-04-29T14:37:45.505+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+[2026-04-29T14:37:45.507+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+[2026-04-29T14:37:45.508+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO Client: Setting up container launch context for our AM
+[2026-04-29T14:37:45.509+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO Client: Setting up the launch environment for our AM container
+[2026-04-29T14:37:45.519+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO Client: Preparing resources for our AM container
+[2026-04-29T14:37:45.600+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 WARN Client: Failed to cleanup staging dir hdfs://hadoop-namenode:9000/user/root/.sparkStaging/application_1777473443879_0002
+[2026-04-29T14:37:45.602+0000] {subprocess.py:106} INFO - org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /user/root/.sparkStaging/application_1777473443879_0002. Name node is in safe mode.
+[2026-04-29T14:37:45.604+0000] {subprocess.py:106} INFO - The reported blocks 68 has reached the threshold 0.9990 of total blocks 68. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:hadoop-namenode
+[2026-04-29T14:37:45.605+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1476)
+[2026-04-29T14:37:45.606+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1463)
+[2026-04-29T14:37:45.607+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:3084)
+[2026-04-29T14:37:45.608+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1114)
+[2026-04-29T14:37:45.609+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:705)
+[2026-04-29T14:37:45.610+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+[2026-04-29T14:37:45.611+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+[2026-04-29T14:37:45.613+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+[2026-04-29T14:37:45.614+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+[2026-04-29T14:37:45.615+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+[2026-04-29T14:37:45.616+0000] {subprocess.py:106} INFO - 	at java.security.AccessController.doPrivileged(Native Method)
+[2026-04-29T14:37:45.617+0000] {subprocess.py:106} INFO - 	at javax.security.auth.Subject.doAs(Subject.java:422)
+[2026-04-29T14:37:45.618+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2026-04-29T14:37:45.619+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+[2026-04-29T14:37:45.619+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:37:45.620+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2026-04-29T14:37:45.621+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2026-04-29T14:37:45.622+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2026-04-29T14:37:45.623+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+[2026-04-29T14:37:45.629+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+[2026-04-29T14:37:45.630+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:121)
+[2026-04-29T14:37:45.631+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:88)
+[2026-04-29T14:37:45.631+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DFSClient.delete(DFSClient.java:1664)
+[2026-04-29T14:37:45.632+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem$19.doCall(DistributedFileSystem.java:992)
+[2026-04-29T14:37:45.633+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem$19.doCall(DistributedFileSystem.java:989)
+[2026-04-29T14:37:45.634+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+[2026-04-29T14:37:45.634+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem.delete(DistributedFileSystem.java:999)
+[2026-04-29T14:37:45.635+0000] {subprocess.py:106} INFO - 	at org.apache.spark.deploy.yarn.Client.cleanupStagingDirInternal$1(Client.scala:243)
+[2026-04-29T14:37:45.636+0000] {subprocess.py:106} INFO - 	at org.apache.spark.deploy.yarn.Client.cleanupStagingDir(Client.scala:252)
+[2026-04-29T14:37:45.636+0000] {subprocess.py:106} INFO - 	at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:226)
+[2026-04-29T14:37:45.637+0000] {subprocess.py:106} INFO - 	at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:62)
+[2026-04-29T14:37:45.638+0000] {subprocess.py:106} INFO - 	at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:235)
+[2026-04-29T14:37:45.639+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:604)
+[2026-04-29T14:37:45.640+0000] {subprocess.py:106} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2026-04-29T14:37:45.640+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2026-04-29T14:37:45.641+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2026-04-29T14:37:45.642+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2026-04-29T14:37:45.643+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+[2026-04-29T14:37:45.644+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+[2026-04-29T14:37:45.645+0000] {subprocess.py:106} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2026-04-29T14:37:45.646+0000] {subprocess.py:106} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2026-04-29T14:37:45.646+0000] {subprocess.py:106} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2026-04-29T14:37:45.647+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2026-04-29T14:37:45.648+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2026-04-29T14:37:45.649+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2026-04-29T14:37:45.650+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2026-04-29T14:37:45.651+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2026-04-29T14:37:45.654+0000] {subprocess.py:106} INFO - Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.server.namenode.SafeModeException): Cannot delete /user/root/.sparkStaging/application_1777473443879_0002. Name node is in safe mode.
+[2026-04-29T14:37:45.656+0000] {subprocess.py:106} INFO - The reported blocks 68 has reached the threshold 0.9990 of total blocks 68. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:hadoop-namenode
+[2026-04-29T14:37:45.659+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1476)
+[2026-04-29T14:37:45.660+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1463)
+[2026-04-29T14:37:45.663+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:3084)
+[2026-04-29T14:37:45.665+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1114)
+[2026-04-29T14:37:45.666+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:705)
+[2026-04-29T14:37:45.667+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+[2026-04-29T14:37:45.668+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+[2026-04-29T14:37:45.669+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+[2026-04-29T14:37:45.669+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+[2026-04-29T14:37:45.670+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+[2026-04-29T14:37:45.671+0000] {subprocess.py:106} INFO - 	at java.security.AccessController.doPrivileged(Native Method)
+[2026-04-29T14:37:45.672+0000] {subprocess.py:106} INFO - 	at javax.security.auth.Subject.doAs(Subject.java:422)
+[2026-04-29T14:37:45.673+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2026-04-29T14:37:45.674+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+[2026-04-29T14:37:45.675+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:37:45.677+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1612)
+[2026-04-29T14:37:45.679+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Client.call(Client.java:1558)
+[2026-04-29T14:37:45.682+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Client.call(Client.java:1455)
+[2026-04-29T14:37:45.684+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+[2026-04-29T14:37:45.685+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+[2026-04-29T14:37:45.693+0000] {subprocess.py:106} INFO - 	at jdk.proxy2/jdk.proxy2.$Proxy34.delete(Unknown Source)
+[2026-04-29T14:37:45.694+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.delete(ClientNamenodeProtocolTranslatorPB.java:655)
+[2026-04-29T14:37:45.695+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2026-04-29T14:37:45.696+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2026-04-29T14:37:45.699+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2026-04-29T14:37:45.702+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+[2026-04-29T14:37:45.703+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+[2026-04-29T14:37:45.704+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+[2026-04-29T14:37:45.705+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+[2026-04-29T14:37:45.706+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+[2026-04-29T14:37:45.707+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+[2026-04-29T14:37:45.707+0000] {subprocess.py:106} INFO - 	at jdk.proxy2/jdk.proxy2.$Proxy35.delete(Unknown Source)
+[2026-04-29T14:37:45.708+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DFSClient.delete(DFSClient.java:1662)
+[2026-04-29T14:37:45.709+0000] {subprocess.py:106} INFO - 	... 24 more
+[2026-04-29T14:37:45.710+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 ERROR SparkContext: Error initializing SparkContext.
+[2026-04-29T14:37:45.711+0000] {subprocess.py:106} INFO - org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot create directory /user/root/.sparkStaging/application_1777473443879_0002. Name node is in safe mode.
+[2026-04-29T14:37:45.712+0000] {subprocess.py:106} INFO - The reported blocks 68 has reached the threshold 0.9990 of total blocks 68. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:hadoop-namenode
+[2026-04-29T14:37:45.713+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1476)
+[2026-04-29T14:37:45.717+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1463)
+[2026-04-29T14:37:45.718+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3232)
+[2026-04-29T14:37:45.719+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1145)
+[2026-04-29T14:37:45.721+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:720)
+[2026-04-29T14:37:45.722+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+[2026-04-29T14:37:45.722+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+[2026-04-29T14:37:45.723+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+[2026-04-29T14:37:45.724+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+[2026-04-29T14:37:45.725+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+[2026-04-29T14:37:45.732+0000] {subprocess.py:106} INFO - 	at java.security.AccessController.doPrivileged(Native Method)
+[2026-04-29T14:37:45.733+0000] {subprocess.py:106} INFO - 	at javax.security.auth.Subject.doAs(Subject.java:422)
+[2026-04-29T14:37:45.734+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2026-04-29T14:37:45.735+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+[2026-04-29T14:37:45.736+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:37:45.737+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2026-04-29T14:37:45.738+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2026-04-29T14:37:45.740+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2026-04-29T14:37:45.741+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+[2026-04-29T14:37:45.742+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+[2026-04-29T14:37:45.743+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:121)
+[2026-04-29T14:37:45.744+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:88)
+[2026-04-29T14:37:45.745+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2509)
+[2026-04-29T14:37:45.746+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DFSClient.mkdirs(DFSClient.java:2483)
+[2026-04-29T14:37:45.747+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem$27.doCall(DistributedFileSystem.java:1485)
+[2026-04-29T14:37:45.748+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem$27.doCall(DistributedFileSystem.java:1482)
+[2026-04-29T14:37:45.749+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+[2026-04-29T14:37:45.750+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirsInternal(DistributedFileSystem.java:1499)
+[2026-04-29T14:37:45.751+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirs(DistributedFileSystem.java:1474)
+[2026-04-29T14:37:45.752+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem.mkdirs(FileSystem.java:2388)
+[2026-04-29T14:37:45.753+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem.mkdirs(FileSystem.java:750)
+[2026-04-29T14:37:45.754+0000] {subprocess.py:106} INFO - 	at org.apache.spark.deploy.yarn.Client.prepareLocalResources(Client.scala:486)
+[2026-04-29T14:37:45.755+0000] {subprocess.py:106} INFO - 	at org.apache.spark.deploy.yarn.Client.createContainerLaunchContext(Client.scala:962)
+[2026-04-29T14:37:45.755+0000] {subprocess.py:106} INFO - 	at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:215)
+[2026-04-29T14:37:45.756+0000] {subprocess.py:106} INFO - 	at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:62)
+[2026-04-29T14:37:45.757+0000] {subprocess.py:106} INFO - 	at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:235)
+[2026-04-29T14:37:45.758+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:604)
+[2026-04-29T14:37:45.759+0000] {subprocess.py:106} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2026-04-29T14:37:45.760+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2026-04-29T14:37:45.761+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2026-04-29T14:37:45.763+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2026-04-29T14:37:45.767+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+[2026-04-29T14:37:45.768+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+[2026-04-29T14:37:45.769+0000] {subprocess.py:106} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2026-04-29T14:37:45.770+0000] {subprocess.py:106} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2026-04-29T14:37:45.771+0000] {subprocess.py:106} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2026-04-29T14:37:45.772+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2026-04-29T14:37:45.773+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2026-04-29T14:37:45.773+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2026-04-29T14:37:45.774+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2026-04-29T14:37:45.775+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2026-04-29T14:37:45.775+0000] {subprocess.py:106} INFO - Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.server.namenode.SafeModeException): Cannot create directory /user/root/.sparkStaging/application_1777473443879_0002. Name node is in safe mode.
+[2026-04-29T14:37:45.776+0000] {subprocess.py:106} INFO - The reported blocks 68 has reached the threshold 0.9990 of total blocks 68. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:hadoop-namenode
+[2026-04-29T14:37:45.777+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1476)
+[2026-04-29T14:37:45.777+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1463)
+[2026-04-29T14:37:45.778+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3232)
+[2026-04-29T14:37:45.779+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1145)
+[2026-04-29T14:37:45.779+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:720)
+[2026-04-29T14:37:45.780+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+[2026-04-29T14:37:45.781+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+[2026-04-29T14:37:45.781+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+[2026-04-29T14:37:45.782+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+[2026-04-29T14:37:45.783+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+[2026-04-29T14:37:45.784+0000] {subprocess.py:106} INFO - 	at java.security.AccessController.doPrivileged(Native Method)
+[2026-04-29T14:37:45.785+0000] {subprocess.py:106} INFO - 	at javax.security.auth.Subject.doAs(Subject.java:422)
+[2026-04-29T14:37:45.786+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2026-04-29T14:37:45.786+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+[2026-04-29T14:37:45.787+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:37:45.788+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1612)
+[2026-04-29T14:37:45.789+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Client.call(Client.java:1558)
+[2026-04-29T14:37:45.789+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Client.call(Client.java:1455)
+[2026-04-29T14:37:45.790+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+[2026-04-29T14:37:45.791+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+[2026-04-29T14:37:45.792+0000] {subprocess.py:106} INFO - 	at jdk.proxy2/jdk.proxy2.$Proxy34.mkdirs(Unknown Source)
+[2026-04-29T14:37:45.792+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.mkdirs(ClientNamenodeProtocolTranslatorPB.java:674)
+[2026-04-29T14:37:45.793+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2026-04-29T14:37:45.794+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2026-04-29T14:37:45.795+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2026-04-29T14:37:45.795+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+[2026-04-29T14:37:45.796+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+[2026-04-29T14:37:45.797+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+[2026-04-29T14:37:45.798+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+[2026-04-29T14:37:45.799+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+[2026-04-29T14:37:45.799+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+[2026-04-29T14:37:45.800+0000] {subprocess.py:106} INFO - 	at jdk.proxy2/jdk.proxy2.$Proxy35.mkdirs(Unknown Source)
+[2026-04-29T14:37:45.801+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2507)
+[2026-04-29T14:37:45.802+0000] {subprocess.py:106} INFO - 	... 28 more
+[2026-04-29T14:37:45.803+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2026-04-29T14:37:45.804+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO SparkUI: Stopped Spark web UI at http://172.30.1.13:4041
+[2026-04-29T14:37:45.804+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to send shutdown message before the AM has registered!
+[2026-04-29T14:37:45.805+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Attempted to request executors before the AM has registered!
+[2026-04-29T14:37:45.806+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO YarnClientSchedulerBackend: Shutting down all executors
+[2026-04-29T14:37:45.807+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+[2026-04-29T14:37:45.807+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO YarnClientSchedulerBackend: YARN client scheduler backend Stopped
+[2026-04-29T14:37:45.808+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2026-04-29T14:37:45.809+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO MemoryStore: MemoryStore cleared
+[2026-04-29T14:37:45.809+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO BlockManager: BlockManager stopped
+[2026-04-29T14:37:45.810+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2026-04-29T14:37:45.811+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+[2026-04-29T14:37:45.811+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2026-04-29T14:37:45.840+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO SparkContext: Successfully stopped SparkContext
+[2026-04-29T14:37:45.841+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-04-29T14:37:45.842+0000] {subprocess.py:106} INFO -   File "/home/jovyan/work/Scripts/loading.py", line 18, in <module>
+[2026-04-29T14:37:45.850+0000] {subprocess.py:106} INFO -     .getOrCreate()
+[2026-04-29T14:37:45.852+0000] {subprocess.py:106} INFO -      ^^^^^^^^^^^^^
+[2026-04-29T14:37:45.854+0000] {subprocess.py:106} INFO -   File "/usr/local/spark/python/lib/pyspark.zip/pyspark/sql/session.py", line 497, in getOrCreate
+[2026-04-29T14:37:45.857+0000] {subprocess.py:106} INFO -   File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 515, in getOrCreate
+[2026-04-29T14:37:45.858+0000] {subprocess.py:106} INFO -   File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 203, in __init__
+[2026-04-29T14:37:45.861+0000] {subprocess.py:106} INFO -   File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 296, in _do_init
+[2026-04-29T14:37:45.863+0000] {subprocess.py:106} INFO -   File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 421, in _initialize_context
+[2026-04-29T14:37:45.865+0000] {subprocess.py:106} INFO -   File "/usr/local/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1587, in __call__
+[2026-04-29T14:37:45.867+0000] {subprocess.py:106} INFO -   File "/usr/local/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 326, in get_return_value
+[2026-04-29T14:37:45.871+0000] {subprocess.py:106} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+[2026-04-29T14:37:45.872+0000] {subprocess.py:106} INFO - : org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot create directory /user/root/.sparkStaging/application_1777473443879_0002. Name node is in safe mode.
+[2026-04-29T14:37:45.873+0000] {subprocess.py:106} INFO - The reported blocks 68 has reached the threshold 0.9990 of total blocks 68. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:hadoop-namenode
+[2026-04-29T14:37:45.874+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1476)
+[2026-04-29T14:37:45.875+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1463)
+[2026-04-29T14:37:45.876+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3232)
+[2026-04-29T14:37:45.877+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1145)
+[2026-04-29T14:37:45.878+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:720)
+[2026-04-29T14:37:45.879+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+[2026-04-29T14:37:45.880+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+[2026-04-29T14:37:45.881+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+[2026-04-29T14:37:45.882+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+[2026-04-29T14:37:45.882+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+[2026-04-29T14:37:45.883+0000] {subprocess.py:106} INFO - 	at java.security.AccessController.doPrivileged(Native Method)
+[2026-04-29T14:37:45.884+0000] {subprocess.py:106} INFO - 	at javax.security.auth.Subject.doAs(Subject.java:422)
+[2026-04-29T14:37:45.885+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2026-04-29T14:37:45.886+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+[2026-04-29T14:37:45.887+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:37:45.888+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2026-04-29T14:37:45.889+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2026-04-29T14:37:45.890+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2026-04-29T14:37:45.891+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+[2026-04-29T14:37:45.892+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+[2026-04-29T14:37:45.893+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:121)
+[2026-04-29T14:37:45.893+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:88)
+[2026-04-29T14:37:45.894+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2509)
+[2026-04-29T14:37:45.895+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DFSClient.mkdirs(DFSClient.java:2483)
+[2026-04-29T14:37:45.896+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem$27.doCall(DistributedFileSystem.java:1485)
+[2026-04-29T14:37:45.897+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem$27.doCall(DistributedFileSystem.java:1482)
+[2026-04-29T14:37:45.898+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+[2026-04-29T14:37:45.899+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirsInternal(DistributedFileSystem.java:1499)
+[2026-04-29T14:37:45.900+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirs(DistributedFileSystem.java:1474)
+[2026-04-29T14:37:45.900+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem.mkdirs(FileSystem.java:2388)
+[2026-04-29T14:37:45.901+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem.mkdirs(FileSystem.java:750)
+[2026-04-29T14:37:45.902+0000] {subprocess.py:106} INFO - 	at org.apache.spark.deploy.yarn.Client.prepareLocalResources(Client.scala:486)
+[2026-04-29T14:37:45.903+0000] {subprocess.py:106} INFO - 	at org.apache.spark.deploy.yarn.Client.createContainerLaunchContext(Client.scala:962)
+[2026-04-29T14:37:45.903+0000] {subprocess.py:106} INFO - 	at org.apache.spark.deploy.yarn.Client.submitApplication(Client.scala:215)
+[2026-04-29T14:37:45.904+0000] {subprocess.py:106} INFO - 	at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend.start(YarnClientSchedulerBackend.scala:62)
+[2026-04-29T14:37:45.905+0000] {subprocess.py:106} INFO - 	at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:235)
+[2026-04-29T14:37:45.906+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:604)
+[2026-04-29T14:37:45.907+0000] {subprocess.py:106} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2026-04-29T14:37:45.908+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2026-04-29T14:37:45.909+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2026-04-29T14:37:45.910+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2026-04-29T14:37:45.912+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+[2026-04-29T14:37:45.913+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+[2026-04-29T14:37:45.914+0000] {subprocess.py:106} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2026-04-29T14:37:45.915+0000] {subprocess.py:106} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2026-04-29T14:37:45.915+0000] {subprocess.py:106} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2026-04-29T14:37:45.916+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2026-04-29T14:37:45.917+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2026-04-29T14:37:45.918+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2026-04-29T14:37:45.919+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2026-04-29T14:37:45.920+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:833)
+[2026-04-29T14:37:45.921+0000] {subprocess.py:106} INFO - Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.server.namenode.SafeModeException): Cannot create directory /user/root/.sparkStaging/application_1777473443879_0002. Name node is in safe mode.
+[2026-04-29T14:37:45.921+0000] {subprocess.py:106} INFO - The reported blocks 68 has reached the threshold 0.9990 of total blocks 68. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:hadoop-namenode
+[2026-04-29T14:37:45.922+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1476)
+[2026-04-29T14:37:45.923+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1463)
+[2026-04-29T14:37:45.924+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3232)
+[2026-04-29T14:37:45.925+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1145)
+[2026-04-29T14:37:45.927+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:720)
+[2026-04-29T14:37:45.928+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+[2026-04-29T14:37:45.929+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+[2026-04-29T14:37:45.929+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+[2026-04-29T14:37:45.930+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+[2026-04-29T14:37:45.931+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+[2026-04-29T14:37:45.932+0000] {subprocess.py:106} INFO - 	at java.security.AccessController.doPrivileged(Native Method)
+[2026-04-29T14:37:45.933+0000] {subprocess.py:106} INFO - 	at javax.security.auth.Subject.doAs(Subject.java:422)
+[2026-04-29T14:37:45.934+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+[2026-04-29T14:37:45.934+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+[2026-04-29T14:37:45.935+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:37:45.936+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1612)
+[2026-04-29T14:37:45.937+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Client.call(Client.java:1558)
+[2026-04-29T14:37:45.938+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.Client.call(Client.java:1455)
+[2026-04-29T14:37:45.939+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+[2026-04-29T14:37:45.940+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+[2026-04-29T14:37:45.940+0000] {subprocess.py:106} INFO - 	at jdk.proxy2/jdk.proxy2.$Proxy34.mkdirs(Unknown Source)
+[2026-04-29T14:37:45.941+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.mkdirs(ClientNamenodeProtocolTranslatorPB.java:674)
+[2026-04-29T14:37:45.942+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2026-04-29T14:37:45.943+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2026-04-29T14:37:45.944+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2026-04-29T14:37:45.945+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+[2026-04-29T14:37:45.946+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+[2026-04-29T14:37:45.947+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+[2026-04-29T14:37:45.947+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+[2026-04-29T14:37:45.949+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+[2026-04-29T14:37:45.950+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+[2026-04-29T14:37:45.952+0000] {subprocess.py:106} INFO - 	at jdk.proxy2/jdk.proxy2.$Proxy35.mkdirs(Unknown Source)
+[2026-04-29T14:37:45.953+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2507)
+[2026-04-29T14:37:45.954+0000] {subprocess.py:106} INFO - 	... 28 more
+[2026-04-29T14:37:45.955+0000] {subprocess.py:106} INFO - 
+[2026-04-29T14:37:45.984+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO ShutdownHookManager: Shutdown hook called
+[2026-04-29T14:37:45.985+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-ab4bd03e-ae60-4c68-9917-f1218e1c0070
+[2026-04-29T14:37:45.996+0000] {subprocess.py:106} INFO - 26/04/29 14:37:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-9c30ef8a-f8a9-46dd-bc35-38e943333baa
+[2026-04-29T14:37:46.149+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2026-04-29T14:37:46.179+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-04-29T14:37:46.189+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=titanic_dag, task_id=loading, run_id=manual__2026-04-29T14:23:18.251879+00:00, execution_date=20260429T142318, start_date=20260429T143734, end_date=20260429T143746
+[2026-04-29T14:37:46.220+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-04-29T14:37:46.222+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 197 for task loading (Bash command failed. The command returned a non-zero exit code 1.; 244)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-04-29T14:37:46.281+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-04-29T14:37:46.316+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-29T14:37:46.320+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
