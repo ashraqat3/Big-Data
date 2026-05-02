@@ -19,9 +19,9 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 sfOptions = {
-    "sfURL": "kv86756.eu-central-2.aws.snowflakecomputing.com",
-    "sfUser": "ashraqat",
-    "sfPassword": "ft84x*NkSi?123",
+    "sfURL": "your_snowflake_url",
+    "sfUser": "your_user_name",
+    "sfPassword": "your_password",
     "sfDatabase": "TITANIC_DB",
     "sfSchema": "TITANIC_SCHEMA",
     "sfWarehouse": "MY_WH",
